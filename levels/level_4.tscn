@@ -1,0 +1,263 @@
+[gd_scene load_steps=24 format=4 uid="uid://bsb8pnq6gvcbk"]
+
+[ext_resource type="Script" uid="uid://ckyvges5g0aa1" path="res://scripts/level.gd" id="1_04hp8"]
+[ext_resource type="PackedScene" uid="uid://doob1ujo878so" path="res://scenes/tiles.tscn" id="1_ng40l"]
+[ext_resource type="PackedScene" uid="uid://cn7r82jbxryhe" path="res://scenes/shadow.tscn" id="2_04hp8"]
+[ext_resource type="PackedScene" uid="uid://ibavlslhpif0" path="res://scenes/firefly.tscn" id="2_ng40l"]
+[ext_resource type="Resource" uid="uid://cilvneqbvfi8k" path="res://ressources/firefly/stat/white_firefly.tres" id="3_04hp8"]
+[ext_resource type="PackedScene" uid="uid://db3f2hbo2pnhp" path="res://scenes/next_level.tscn" id="3_8hlpj"]
+[ext_resource type="Resource" uid="uid://cdqxl55qq3qyr" path="res://ressources/firefly/action/visibility_firefly.tres" id="4_8hlpj"]
+[ext_resource type="PackedScene" uid="uid://deuo1aib8dwi7" path="res://scenes/match_fire.tscn" id="4_qhnv2"]
+[ext_resource type="Texture2D" uid="uid://dhmsf5pijexw5" path="res://assets/sprites/objects/next_level_sprite.png" id="5_dp2yl"]
+[ext_resource type="PackedScene" uid="uid://d275f3jjkcraa" path="res://scenes/darkness.tscn" id="5_vru0x"]
+[ext_resource type="Script" uid="uid://droyhbj783do6" path="res://scripts/edit_mode_object.gd" id="6_5oqfd"]
+[ext_resource type="Resource" uid="uid://bpsyrk7wd277" path="res://ressources/match_fire/white_match_fire.tres" id="9_a7qdg"]
+[ext_resource type="PackedScene" uid="uid://rogmarxracvu" path="res://scenes/icon.tscn" id="11_8hlpj"]
+[ext_resource type="Texture2D" uid="uid://c28tgw7sh0nle" path="res://assets/sprites/darkness/Darkness_bottom.png" id="11_vru0x"]
+[ext_resource type="Texture2D" uid="uid://bsj73tnuuyrv0" path="res://assets/sprites/darkness/Darkness_top.png" id="12_5oqfd"]
+[ext_resource type="Texture2D" uid="uid://clwwau6q3b262" path="res://assets/sprites/darkness/Darkness_thumb_top.png" id="12_8mt0c"]
+[ext_resource type="Resource" uid="uid://c41r22lrbs5ub" path="res://ressources/icon/icon_white_firefly.tres" id="12_qhnv2"]
+[ext_resource type="Texture2D" uid="uid://cyi4csikgsrlo" path="res://assets/sprites/darkness/Darkness_thumb_bottom.png" id="14_5oqfd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52a3b"]
+resource_local_to_scene = true
+size = Vector2(1420, 12)
+
+[sub_resource type="Animation" id="Animation_gwceb"]
+resource_name = "Death_animation_in"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3sk1a"]
+resource_name = "Death_animation_out"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l53as"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l53as"]
+_data = {
+&"Death_animation_in": SubResource("Animation_gwceb"),
+&"Death_animation_out": SubResource("Animation_3sk1a"),
+&"RESET": SubResource("Animation_l53as")
+}
+
+[node name="Level_4" type="Node2D"]
+script = ExtResource("1_04hp8")
+level_number = 4
+cam_max_zoom = Vector2(0.7, 0.7)
+
+[node name="PlayModeObject" type="Node" parent="."]
+
+[node name="White_" parent="PlayModeObject" instance=ExtResource("2_ng40l")]
+position = Vector2(677, -413)
+stat = ExtResource("3_04hp8")
+action = ExtResource("4_8hlpj")
+metadata/_edit_lock_ = true
+
+[node name="White_firefly2" parent="PlayModeObject" instance=ExtResource("2_ng40l")]
+position = Vector2(687, -275)
+stat = ExtResource("3_04hp8")
+action = ExtResource("4_8hlpj")
+metadata/_edit_lock_ = true
+
+[node name="White_firefly3" parent="PlayModeObject" instance=ExtResource("2_ng40l")]
+position = Vector2(693, -135)
+stat = ExtResource("3_04hp8")
+action = ExtResource("4_8hlpj")
+metadata/_edit_lock_ = true
+
+[node name="White_firefly4" parent="PlayModeObject" instance=ExtResource("2_ng40l")]
+position = Vector2(701, -47)
+stat = ExtResource("3_04hp8")
+action = ExtResource("4_8hlpj")
+metadata/_edit_lock_ = true
+
+[node name="NextLevelSprite" type="Sprite2D" parent="PlayModeObject"]
+position = Vector2(-416, 88)
+texture = ExtResource("5_dp2yl")
+
+[node name="next_level" parent="PlayModeObject" instance=ExtResource("3_8hlpj")]
+position = Vector2(443, -72)
+
+[node name="Tiles" parent="PlayModeObject" instance=ExtResource("1_ng40l")]
+position = Vector2(108, -72)
+tile_map_data = PackedByteArray("AADg/wsAAAAEAAoAAADh/wsAAAACAAoAAADi/wsAAAAEAAoAAADf/wsAAAAEAAoAAADj/wsAAAAGAAoAAADf/+v/AAAEAAAAAADg/+v/AAAEAAAAAADh/+v/AAAEAAAAAADi/+v/AAAEAAAAAADj/+v/AAAEAAAAAADn/+v/AAAEAAAAAADo/+v/AAAEAAAAAADk/+v/AAAEAAAAAADl/+v/AAAEAAAAAADm/+v/AAAEAAAAAADd/woAAAAAAAgAAADd/wkAAAAAAAgAAADd/wgAAAAAAAgAAADd/wcAAAAAAAgAAADd/wYAAAAAAAgAAADd/wUAAAAAAAgAAADd/wQAAAAAAAgAAADd/wIAAAAAAAQAAADd/wMAAAAAAAgAAADd/wEAAAAAAAgAAADd/wAAAAAAAAgAAADd////AAAAAAgAAADd//7/AAAAAAgAAADd//3/AAAAAAgAAADd//z/AAAAAAgAAADd//v/AAAAAAgAAADd//r/AAAAAAgAAADd//n/AAAAAAgAAADd//j/AAAAAAgAAADd//f/AAAAAAgAAADd//b/AAAAAAgAAADd/wsAAAAAAAoAAADe/wsAAAAEAAoAAADd/+v/AAAAAAAAAADe/+v/AAAEAAAAAADp/+v/AAAEAAAAAADq/+v/AAAEAAAAAADr/+v/AAAEAAAAAADs/+v/AAAEAAAAAADt/+v/AAAEAAAAAADu/+v/AAAEAAAAAADv/+v/AAAEAAAAAADw/+v/AAAEAAAAAADx/+v/AAAEAAAAAADy/+v/AAAEAAAAAADz/+v/AAAEAAAAAAD0/+v/AAAEAAAAAAD1/+v/AAAEAAAAAAD2/+v/AAAEAAAAAAD3/+v/AAAEAAAAAAD4/+v/AAAEAAAAAAD5/+v/AAAEAAAAAAD6/+v/AAAEAAAAAAD7/+v/AAAEAAAAAAD8/+v/AAAEAAAAAAD9/+v/AAAEAAAAAAD+/+v/AAAEAAAAAAD//+v/AAAEAAAAAAAAAOv/AAAEAAAAAAABAOv/AAAEAAAAAAACAOv/AAAEAAAAAAADAOv/AAAEAAAAAAAEAOv/AAAEAAAAAAAFAOv/AAAEAAAAAAAGAOv/AAAEAAAAAAAHAOv/AAAEAAAAAAAKAOv/AAAEAAAAAAALAOv/AAAEAAAAAAAMAOv/AAAEAAAAAAAJAOv/AAAEAAAAAAAIAOv/AAAEAAAAAAANAOv/AAAEAAAAAAAOAOv/AAAEAAAAAAAPAOv/AAAEAAAAAAAQAOv/AAAEAAAAAAARAOv/AAAEAAAAAAASAOv/AAAEAAAAAAATAOv/AAAEAAAAAAAUAOv/AAAEAAAAAAAVAOv/AAAEAAAAAAAWAOv/AAAGAAAAAAAWAOz/AAAGAAQAAAAWAO3/AAAGAAQAAAAWAO7/AAAGAAQAAAAWAO//AAAGAAQAAAAWAPD/AAAGAAQAAAAWAPH/AAAGAAQAAAAWAPL/AAAGAAQAAAAWAPP/AAAGAAQAAAAWAPT/AAAGAAQAAAAWAPX/AAAGAAQAAAAWAPb/AAAGAAQAAAAWAPf/AAAGAAQAAAAWAPj/AAAGAAQAAAAWAPn/AAAGAAQAAAAWAPr/AAAGAAQAAAAWAPv/AAAGAAQAAAAWAPz/AAAGAAQAAAAWAP3/AAAGAAQAAAAWAP7/AAAGAAQAAAAWAP//AAAGAAQAAAAWAAAAAAAGAAQAAADd//X/AAAAAAgAAADd//T/AAAAAAgAAADd//P/AAAAAAgAAADd//L/AAAAAAgAAADd//H/AAAAAAgAAADd//D/AAAAAAgAAADd/+//AAAAAAgAAADd/+7/AAAAAAgAAADd/+3/AAAAAAgAAADd/+z/AAAAAAgAAAAVAAEAAAAEAAoAAAAUAAEAAAAEAAoAAAATAAEAAAAEAAoAAAASAAEAAAAEAAoAAAARAAEAAAAEAAoAAAAWAAEAAAAGAAoAAAAQAAAAAAAEAAgAAAAQAP//AAAEAAgAAAAQAP7/AAAIAAIAAAAQAP3/AAAEAAgAAAAQAPz/AAAEAAgAAAAQAPv/AAAEAAgAAAAQAPr/AAAEAAgAAAAQAPn/AAAEAAgAAAAQAPj/AAAIAAIAAAAQAPf/AAAEAAgAAAAQAPb/AAAEAAgAAAAQAPX/AAAEAAgAAAAQAPT/AAAEAAgAAAAQAPP/AAAEAAgAAAAQAPL/AAAIAAYAAAAQAAEAAAAEAAoAAAAPAAEAAAAEAAoAAAAOAAEAAAAEAAoAAAANAAEAAAAEAAoAAAAMAAEAAAAEAAoAAAALAAEAAAAEAAoAAAAKAAEAAAAEAAoAAAAJAAEAAAAEAAoAAAAIAAEAAAAEAAoAAAAHAAEAAAAEAAoAAAAGAAEAAAAEAAoAAAAFAAEAAAAEAAoAAAAEAAEAAAAEAAoAAAADAAEAAAAEAAoAAAACAAEAAAAEAAoAAAABAAEAAAAEAAoAAAAAAAEAAAAEAAoAAAD//wEAAAAEAAoAAAD+/wEAAAAEAAoAAAD9/wEAAAAEAAoAAAD8/wEAAAAEAAoAAAD7/wEAAAAEAAoAAAD6/wEAAAAEAAoAAAD5/wEAAAAEAAoAAAD4/wEAAAAEAAoAAAD3/wEAAAAEAAoAAAD2/wEAAAAAAAoAAAAPAP7/AAACAAYAAAAOAP7/AAAEAAYAAAANAP7/AAAEAAYAAAAMAP7/AAAEAAYAAAAKAP7/AAAEAAYAAAAJAP7/AAAEAAYAAAAIAP7/AAAEAAYAAAAHAP7/AAAEAAYAAAAGAP7/AAAEAAYAAAAFAP7/AAAEAAYAAAAEAP7/AAAEAAYAAAADAP7/AAAEAAYAAAACAP7/AAAEAAYAAAABAP7/AAAEAAYAAAAAAP7/AAAEAAYAAAD+//7/AAAEAAQAAAD///7/AAAEAAYAAAALAP7/AAAEAAYAAAAPAPj/AAACAAYAAAAPAPL/AAACAAYAAAAOAPL/AAAEAAYAAAANAPL/AAAEAAYAAAAMAPL/AAAEAAYAAAALAPL/AAAEAAYAAAAKAPL/AAAEAAQAAAAKAPX/AAACAAYAAAAJAPX/AAAEAAYAAAAIAPX/AAAEAAYAAAAHAPX/AAAEAAYAAAAGAPX/AAAEAAQAAAAOAPj/AAAEAAYAAAANAPj/AAAEAAYAAAAMAPj/AAAEAAYAAAALAPj/AAAEAAYAAAAKAPj/AAAEAAYAAAAJAPj/AAAEAAYAAAAIAPj/AAAEAAYAAAAHAPj/AAAEAAYAAAAGAPj/AAAEAAYAAAAFAPj/AAAEAAYAAAAEAPj/AAAEAAYAAAADAPj/AAAEAAQAAAAIAPv/AAACAAYAAAAHAPv/AAAEAAYAAAAGAPv/AAAEAAYAAAAFAPv/AAAEAAYAAAAEAPv/AAAEAAYAAAADAPv/AAAEAAYAAAACAPv/AAAEAAYAAAABAPv/AAAEAAYAAAAAAPv/AAAEAAQAAADm/wgAAAAEAAQAAADn/wgAAAACAAYAAADt/wEAAAAEAAQAAADu/wEAAAACAAYAAADq/wQAAAAEAAYAAADp/wQAAAAEAAQAAADr/wQAAAACAAYAAADm/+z/AAAKAAYAAADm/+3/AAAKAAgAAADm/+7/AAAKAAoAAAAAAOz/AAAKAAoAAAAAAO3/AAAKAAoAAAAAAO7/AAAKAAYAAAAKAAIAAAAKAAYAAAAKAAMAAAAKAAgAAAD6/wIAAAAKAAYAAAD6/wMAAAAKAAYAAAD6/wQAAAAKAAoAAADh/wwAAAAKAAoAAADh/w0AAAAKAAgAAAADAAAAAAAKAAQAAADq/wMAAAAKAAQAAAAFAPf/AAAKAAQAAAARAAAAAAAKAAQAAAA=")
+
+[node name="MatchFire_start2" parent="PlayModeObject" instance=ExtResource("4_qhnv2")]
+position = Vector2(356, -120)
+action = ExtResource("4_8hlpj")
+stat = ExtResource("9_a7qdg")
+metadata/_edit_lock_ = true
+
+[node name="MatchFire_start" parent="PlayModeObject" instance=ExtResource("4_qhnv2")]
+position = Vector2(-391, 88)
+action = ExtResource("4_8hlpj")
+stat = ExtResource("9_a7qdg")
+metadata/_edit_lock_ = true
+
+[node name="MatchFire_start5" parent="PlayModeObject" instance=ExtResource("4_qhnv2")]
+position = Vector2(-23, -72)
+action = ExtResource("4_8hlpj")
+stat = ExtResource("9_a7qdg")
+metadata/_edit_lock_ = true
+
+[node name="MatchFire_start3" parent="PlayModeObject" instance=ExtResource("4_qhnv2")]
+position = Vector2(357, -216)
+action = ExtResource("4_8hlpj")
+stat = ExtResource("9_a7qdg")
+metadata/_edit_lock_ = true
+
+[node name="MatchFire_start4" parent="PlayModeObject" instance=ExtResource("4_qhnv2")]
+position = Vector2(358, -312)
+action = ExtResource("4_8hlpj")
+stat = ExtResource("9_a7qdg")
+metadata/_edit_lock_ = true
+
+[node name="MatchFire_end" parent="PlayModeObject" instance=ExtResource("4_qhnv2")]
+position = Vector2(407, -72)
+action = ExtResource("4_8hlpj")
+stat = ExtResource("9_a7qdg")
+metadata/_edit_lock_ = true
+
+[node name="Shadow" parent="PlayModeObject" instance=ExtResource("2_04hp8")]
+position = Vector2(-402, 96)
+
+[node name="Camera2D" type="Camera2D" parent="PlayModeObject"]
+position = Vector2(16, -141)
+
+[node name="Death_zone" type="Area2D" parent="PlayModeObject"]
+position = Vector2(-174, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayModeObject/Death_zone"]
+position = Vector2(209, 143)
+shape = SubResource("RectangleShape2D_52a3b")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayModeObject/Death_zone"]
+position = Vector2(214, -428)
+shape = SubResource("RectangleShape2D_52a3b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayModeObject"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_l53as")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PlayModeObject"]
+
+[node name="ColorRect" type="ColorRect" parent="PlayModeObject/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="Darkness" parent="PlayModeObject" node_paths=PackedStringArray("lvl") instance=ExtResource("5_vru0x")]
+position = Vector2(-235, -284)
+lvl = NodePath("../..")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="PlayModeObject"]
+position = Vector2(21, -312)
+amount = 2
+lifetime = 1.3
+emission_shape = 3
+emission_rect_extents = Vector2(300, 1)
+gravity = Vector2(0, 400)
+
+[node name="EditModeObject" type="Node" parent="."]
+script = ExtResource("6_5oqfd")
+
+[node name="Decor_bottom" type="CanvasLayer" parent="EditModeObject"]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="DarknessBottom" type="Sprite2D" parent="EditModeObject/Decor_bottom"]
+position = Vector2(-287, 149)
+texture = ExtResource("11_vru0x")
+
+[node name="DarknessThumbTop" type="Sprite2D" parent="EditModeObject/Decor_bottom"]
+position = Vector2(-45, 119)
+texture = ExtResource("12_8mt0c")
+
+[node name="Icon4" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("11_8hlpj")]
+position = Vector2(-196, 139)
+attach_object = NodePath("../../PlayModeObject/White_firefly4")
+icon = ExtResource("12_qhnv2")
+
+[node name="Icon3" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("11_8hlpj")]
+position = Vector2(-219, 137)
+attach_object = NodePath("../../PlayModeObject/White_firefly3")
+icon = ExtResource("12_qhnv2")
+
+[node name="Icon2" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("11_8hlpj")]
+position = Vector2(-257, 137)
+attach_object = NodePath("../../PlayModeObject/White_firefly2")
+icon = ExtResource("12_qhnv2")
+
+[node name="Icon" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("11_8hlpj")]
+position = Vector2(-287, 139)
+attach_object = NodePath("../../PlayModeObject/White_")
+icon = ExtResource("12_qhnv2")
+
+[node name="Decor_top" type="CanvasLayer" parent="EditModeObject"]
+follow_viewport_enabled = true
+
+[node name="DarknessTop" type="Sprite2D" parent="EditModeObject/Decor_top"]
+position = Vector2(-14, 120)
+texture = ExtResource("12_5oqfd")
+
+[node name="DarknessThumbBottom" type="Sprite2D" parent="EditModeObject/Decor_top"]
+position = Vector2(-252, 147)
+texture = ExtResource("14_5oqfd")
+
+[node name="Inventory" type="Area2D" parent="EditModeObject"]
+position = Vector2(-12, 112)
+collision_layer = 0
+collision_mask = 4
+input_pickable = false
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EditModeObject/Inventory"]
+polygon = PackedVector2Array(-434, -508, -573, -509, -562, 189, 604, 206, 607, -509, 484, -508, 490, 19, -437, 12)
+
+[connection signal="body_entered" from="PlayModeObject/next_level" to="." method="_on_next_level_body_entered"]
+[connection signal="body_entered" from="PlayModeObject/Death_zone" to="." method="_on_death_zone_body_entered"]
+[connection signal="animation_finished" from="PlayModeObject/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

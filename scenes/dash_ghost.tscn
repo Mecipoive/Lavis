@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://kvou5x02x1j"]
+
+[ext_resource type="Texture2D" uid="uid://c0gi8i1ul13d4" path="res://assets/sprites/shadow/Shadow_dash_ghos.png" id="1_geobj"]
+
+[sub_resource type="GDScript" id="GDScript_vchkx"]
+script/source = "extends Sprite2D
+
+
+func _ready() -> void:
+	ghosting()
+
+
+
+func set_property(tx_pos, tx_scale):
+	position = tx_pos
+	scale = tx_scale
+	
+func ghosting():
+	var tween_fade = get_tree().create_tween()
+	
+	tween_fade.tween_property(self,\"self_modulate\",Color(1.0, 1.0, 1.0, 0.0),0.1)
+	await tween_fade.finished
+	
+	queue_free()
+"
+
+[node name="dash_ghost" type="Sprite2D" groups=["Light_only"]]
+texture = ExtResource("1_geobj")
+script = SubResource("GDScript_vchkx")

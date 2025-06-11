@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="long_dash_firefly" load_steps=2 format=3 uid="uid://cay02bpr2oaqd"]
+
+[ext_resource type="Script" uid="uid://b0holhkqbro1q" path="res://scripts/firefly/long_dash.gd" id="1_swj6d"]
+
+[resource]
+script = ExtResource("1_swj6d")
+metadata/_custom_type_script = "uid://b0holhkqbro1q"

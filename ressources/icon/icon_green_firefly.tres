@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="stat_icon" load_steps=3 format=3 uid="uid://cg7ht8bjdsiio"]
+
+[ext_resource type="Script" uid="uid://bqua7tdh5652x" path="res://scripts/stat_icon.gd" id="1_fsa5y"]
+[ext_resource type="Texture2D" uid="uid://beo5d2eui0020" path="res://assets/sprites/icon/Green_flre_fly_icon.png" id="2_fsa5y"]
+
+[resource]
+script = ExtResource("1_fsa5y")
+sprite = ExtResource("2_fsa5y")
+name = "Green Firefly"
+metadata/_custom_type_script = "uid://bqua7tdh5652x"

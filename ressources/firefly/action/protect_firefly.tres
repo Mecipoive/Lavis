@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="protect_firefly" load_steps=2 format=3 uid="uid://ct4tr2vgn0yf7"]
+
+[ext_resource type="Script" uid="uid://b0hm8usj1cvny" path="res://scripts/firefly/protect_firefly.gd" id="1_815s6"]
+
+[resource]
+script = ExtResource("1_815s6")
+metadata/_custom_type_script = "uid://b0hm8usj1cvny"

@@ -1,0 +1,155 @@
+[gd_scene load_steps=18 format=3 uid="uid://deuo1aib8dwi7"]
+
+[ext_resource type="Script" uid="uid://dunew11dcqhn8" path="res://scripts/match_fire.gd" id="1_x4en7"]
+[ext_resource type="Texture2D" uid="uid://uofg76lvkepn" path="res://assets/sprites/objects/Match.png" id="2_a2fbr"]
+[ext_resource type="Shader" uid="uid://1h8wnpsoqo1f" path="res://shaders/match_fire.gdshader" id="2_krr05"]
+[ext_resource type="Texture2D" uid="uid://dockkdnyhxmfe" path="res://img/geometric-design-element-free-png.png" id="2_ptd1w"]
+
+[sub_resource type="Gradient" id="Gradient_a2fbr"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0, 0.464286, 0.511905)
+colors = PackedColorArray(1, 1, 1, 0.301961, 1, 1, 1, 0.388235, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x4en7"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_a2fbr")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_krr05"]
+resource_local_to_scene = true
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.636905)
+colors = PackedColorArray(1, 1, 1, 0.121569, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ptd1w"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_krr05")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pswf2"]
+resource_local_to_scene = true
+shader = ExtResource("2_krr05")
+shader_parameter/color_flame = Color(255, 255, 255, 255)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krr05"]
+atlas = ExtResource("2_a2fbr")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pswf2"]
+atlas = ExtResource("2_a2fbr")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8fos"]
+atlas = ExtResource("2_a2fbr")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnjhn"]
+atlas = ExtResource("2_a2fbr")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bosnu"]
+atlas = ExtResource("2_a2fbr")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_judk2"]
+atlas = ExtResource("2_a2fbr")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ptd1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krr05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pswf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8fos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnjhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bosnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_judk2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ptd1w"]
+
+[node name="MatchFire" type="Node2D"]
+script = ExtResource("1_x4en7")
+
+[node name="big" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -186.0
+offset_right = 186.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(186, 186)
+texture = SubResource("GradientTexture2D_x4en7")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="small" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -71.0
+offset_right = 71.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(71, 71)
+texture = SubResource("GradientTexture2D_ptd1w")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_pswf2")
+sprite_frames = SubResource("SpriteFrames_ptd1w")
+autoplay = "default"
+frame_progress = 0.269074
+
+[node name="Collision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+shape = SubResource("CircleShape2D_ptd1w")
+
+[node name="PointLight2D" type="PointLight2D" parent="." groups=["lumiere"]]
+position = Vector2(2, -2)
+color = Color(1, 1, 1, 0)
+energy = 0.0
+range_item_cull_mask = 2
+texture = ExtResource("2_ptd1w")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(3, -13)
+amount = 3
+emission_shape = 3
+emission_rect_extents = Vector2(2, 1)
+gravity = Vector2(0, -20)
+
+[connection signal="body_entered" from="Collision" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Collision" to="." method="_on_body_exited"]

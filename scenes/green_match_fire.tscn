@@ -1,0 +1,148 @@
+[gd_scene load_steps=16 format=3 uid="uid://c3ky16s8ht04h"]
+
+[ext_resource type="Script" uid="uid://brjotbvdv1b7i" path="res://scripts/Green_match_fire.gd" id="1_kix5m"]
+[ext_resource type="Texture2D" uid="uid://uofg76lvkepn" path="res://assets/sprites/objects/Match.png" id="2_7rm6w"]
+[ext_resource type="Texture2D" uid="uid://dockkdnyhxmfe" path="res://img/geometric-design-element-free-png.png" id="3_smw4e"]
+
+[sub_resource type="Gradient" id="Gradient_vwwlv"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0, 0.464286, 0.511905)
+colors = PackedColorArray(1, 1, 1, 0.301961, 1, 1, 1, 0.388235, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8xu58"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_vwwlv")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_fjwvr"]
+resource_local_to_scene = true
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.636905)
+colors = PackedColorArray(1, 1, 1, 0.121569, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gr2l8"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_fjwvr")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krr05"]
+atlas = ExtResource("2_7rm6w")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pswf2"]
+atlas = ExtResource("2_7rm6w")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8fos"]
+atlas = ExtResource("2_7rm6w")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnjhn"]
+atlas = ExtResource("2_7rm6w")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bosnu"]
+atlas = ExtResource("2_7rm6w")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_judk2"]
+atlas = ExtResource("2_7rm6w")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bfqug"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krr05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pswf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8fos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnjhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bosnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_judk2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2iaaj"]
+
+[node name="Green_match_fire" type="Node2D"]
+rotation = 3.14159
+script = ExtResource("1_kix5m")
+
+[node name="big" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -186.0
+offset_right = 186.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(186, 186)
+texture = SubResource("GradientTexture2D_8xu58")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="small" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -71.0
+offset_right = 71.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(71, 71)
+texture = SubResource("GradientTexture2D_gr2l8")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bfqug")
+autoplay = "default"
+
+[node name="Collision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+shape = SubResource("CircleShape2D_2iaaj")
+
+[node name="PointLight2D" type="PointLight2D" parent="." groups=["lumiere"]]
+position = Vector2(2, -2)
+color = Color(1, 1, 1, 0)
+energy = 0.0
+range_item_cull_mask = 2
+texture = ExtResource("3_smw4e")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(3, -13)
+amount = 3
+emission_shape = 3
+emission_rect_extents = Vector2(2, 1)
+gravity = Vector2(0, -20)
+
+[connection signal="body_entered" from="Collision" to="." method="_on_collision_body_entered"]
+[connection signal="body_exited" from="Collision" to="." method="_on_collision_body_exited"]

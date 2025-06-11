@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="stat_icon" load_steps=3 format=3 uid="uid://deprw8xxetdc3"]
+
+[ext_resource type="Script" uid="uid://bqua7tdh5652x" path="res://scripts/stat_icon.gd" id="1_waqx7"]
+[ext_resource type="Texture2D" uid="uid://bm2pxkxt0dw6t" path="res://assets/sprites/icon/Red_flre_fly_icon.png" id="2_n3uvg"]
+
+[resource]
+script = ExtResource("1_waqx7")
+sprite = ExtResource("2_n3uvg")
+name = "Red Firefly"
+metadata/_custom_type_script = "uid://bqua7tdh5652x"

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="nothing_firefly" load_steps=2 format=3 uid="uid://dap4cauulpyt"]
+
+[ext_resource type="Script" uid="uid://cjhlpnq3v2mr0" path="res://scripts/firefly/nothing_firefly.gd" id="1_q83ss"]
+
+[resource]
+script = ExtResource("1_q83ss")
+metadata/_custom_type_script = "uid://cjhlpnq3v2mr0"

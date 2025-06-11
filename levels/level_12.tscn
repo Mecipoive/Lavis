@@ -1,0 +1,350 @@
+[gd_scene load_steps=31 format=4 uid="uid://dyqqmtp2takvl"]
+
+[ext_resource type="Script" uid="uid://ckyvges5g0aa1" path="res://scripts/level.gd" id="1_0cb17"]
+[ext_resource type="PackedScene" uid="uid://doob1ujo878so" path="res://scenes/tiles.tscn" id="2_63owy"]
+[ext_resource type="PackedScene" uid="uid://db3f2hbo2pnhp" path="res://scenes/next_level.tscn" id="3_ucyrb"]
+[ext_resource type="Texture2D" uid="uid://dhmsf5pijexw5" path="res://assets/sprites/objects/next_level_sprite.png" id="4_hgdib"]
+[ext_resource type="PackedScene" uid="uid://cn7r82jbxryhe" path="res://scenes/shadow.tscn" id="5_g3m3p"]
+[ext_resource type="Texture2D" uid="uid://c634wi7n7qdy7" path="res://assets/sprites/icon/Tuto_red_flre_fly_icont.png" id="5_p8hxd"]
+[ext_resource type="PackedScene" uid="uid://deuo1aib8dwi7" path="res://scenes/match_fire.tscn" id="6_46gci"]
+[ext_resource type="PackedScene" uid="uid://ibavlslhpif0" path="res://scenes/firefly.tscn" id="6_lc84k"]
+[ext_resource type="Resource" uid="uid://ccarvogxygcgc" path="res://ressources/firefly/stat/red_firefly.tres" id="7_j62rw"]
+[ext_resource type="PackedScene" uid="uid://d275f3jjkcraa" path="res://scenes/darkness.tscn" id="7_p8hxd"]
+[ext_resource type="Script" uid="uid://baa0pxa2vvev0" path="res://scripts/SoundRichText.gd" id="8_lc84k"]
+[ext_resource type="Script" uid="uid://cvbyfdjrm3e6r" path="res://scripts/firefly/reset_dash_firefly.gd" id="8_v6gi3"]
+[ext_resource type="FontFile" uid="uid://v500gd7orbvb" path="res://assets/font/MedodicaRegular.otf" id="9_j62rw"]
+[ext_resource type="Script" uid="uid://droyhbj783do6" path="res://scripts/edit_mode_object.gd" id="10_v6gi3"]
+[ext_resource type="Resource" uid="uid://cdqxl55qq3qyr" path="res://ressources/firefly/action/visibility_firefly.tres" id="11_j62rw"]
+[ext_resource type="Texture2D" uid="uid://c28tgw7sh0nle" path="res://assets/sprites/darkness/Darkness_bottom.png" id="11_rjodl"]
+[ext_resource type="Texture2D" uid="uid://cyi4csikgsrlo" path="res://assets/sprites/darkness/Darkness_thumb_bottom.png" id="12_o4lgy"]
+[ext_resource type="Resource" uid="uid://bpsyrk7wd277" path="res://ressources/match_fire/white_match_fire.tres" id="12_v6gi3"]
+[ext_resource type="PackedScene" uid="uid://rogmarxracvu" path="res://scenes/icon.tscn" id="16_rjodl"]
+[ext_resource type="Resource" uid="uid://deprw8xxetdc3" path="res://ressources/icon/icon_red_firefly.tres" id="17_o4lgy"]
+
+[sub_resource type="Resource" id="Resource_hblnf"]
+script = ExtResource("8_v6gi3")
+metadata/_custom_type_script = "uid://cvbyfdjrm3e6r"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hblnf"]
+resource_local_to_scene = true
+size = Vector2(687, 6)
+
+[sub_resource type="Animation" id="Animation_gwceb"]
+resource_name = "Death_animation_in"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3sk1a"]
+resource_name = "Death_animation_out"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l53as"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l53as"]
+_data = {
+&"Death_animation_in": SubResource("Animation_gwceb"),
+&"Death_animation_out": SubResource("Animation_3sk1a"),
+&"RESET": SubResource("Animation_l53as")
+}
+
+[sub_resource type="Animation" id="Animation_k2aru"]
+resource_name = "Dialogue"
+length = 19.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 5.1, 10, 10.1, 18),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["[wave amp=2 ][font=res://assets/font/yoster.ttf][center]Let me help you one more time.[/center] [/font] [/wave]", "[wave amp=2 ][font=res://assets/font/yoster.ttf][center][/center] [/font] [/wave]", "[wave amp=2 ][font=res://assets/font/yoster.ttf][center]Members of my court could lend you their energy.[/center] [/font] [/wave]", "[wave amp=2 ][font=res://assets/font/yoster.ttf][center][/center] [/font] [/wave]", "[wave amp=2 ][font=res://assets/font/yoster.ttf][center]Drag and drop the fireflies to allow to dash a second time.[/center] [/font] [/wave]", "[wave amp=2 ][font=res://assets/font/yoster.ttf][center][/center] [/font] [/wave]"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4, 5, 5.1, 9, 10, 10.1, 16.0333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:label_settings:font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 18, 19),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:label_settings:shadow_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 18, 19),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.32549)]
+}
+
+[sub_resource type="Animation" id="Animation_ndgrd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["[wave amp=2 ][font=res://assets/font/yoster.ttf][center]It looks like this time you’ll be needing me.[/center] [/font] [/wave]"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:label_settings:font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:label_settings:shadow_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h351q"]
+_data = {
+&"Dialogue": SubResource("Animation_k2aru"),
+&"RESET": SubResource("Animation_ndgrd")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ul1j"]
+font = ExtResource("9_j62rw")
+font_color = Color(1, 1, 1, 0)
+shadow_color = Color(1, 1, 1, 0)
+
+[node name="Level_12" type="Node2D"]
+script = ExtResource("1_0cb17")
+level_number = 12
+cam_max_zoom = Vector2(1.3, 1.3)
+
+[node name="PlayModeObject" type="Node" parent="."]
+
+[node name="Tiles" parent="PlayModeObject" instance=ExtResource("2_63owy")]
+position = Vector2(108, -72)
+tile_map_data = PackedByteArray("AADw/wQAAAAEAAoAAADx/wQAAAAEAAoAAADy/wQAAAAEAAoAAADz/wQAAAAEAAoAAAD0/wQAAAAEAAoAAAD1/wQAAAACAAoAAAACAAQAAAAEAAoAAAADAAQAAAAEAAoAAAAEAAQAAAACAAoAAAAFAAQAAAAEAAoAAADv/wQAAAAAAAoAAADv/wEAAAAAAAIAAADv/wIAAAAAAAQAAADv/wMAAAAAAAgAAAAGAAAAAAAGAAIAAAAGAAQAAAAGAAoAAAAGAAMAAAAGAAQAAAAGAAEAAAAGAAYAAAAGAAIAAAAGAAQAAAAGAP7/AAAGAAAAAADv//7/AAAAAAAAAADv/wAAAAAAAAgAAADv////AAAAAAgAAAAGAP//AAAGAAQAAADw//7/AAAEAAAAAADx//7/AAAEAAAAAADy//7/AAAEAAAAAAD6//7/AAAEAAAAAADz//7/AAAEAAAAAAD0//7/AAAEAAAAAAD1//7/AAAEAAAAAAD2//7/AAAEAAAAAAD3//7/AAAEAAAAAAD4//7/AAAEAAAAAAD5//7/AAAEAAAAAAD7//7/AAAEAAAAAAD8//7/AAAEAAAAAAD9//7/AAAEAAAAAAD+//7/AAAEAAAAAAD///7/AAAEAAAAAAAAAP7/AAAEAAAAAAABAP7/AAAEAAAAAAACAP7/AAAEAAAAAAADAP7/AAAEAAAAAAAEAP7/AAAEAAAAAAAFAP7/AAAEAAAAAAD2/wQAAAAGAAoAAAABAAQAAAAAAAoAAAD1/wMAAAAKAAQAAAADAAMAAAAKAAQAAAD3////AAAKAAYAAAAEAP//AAAKAAoAAADy/wUAAAAKAAgAAAA=")
+
+[node name="next_level" parent="PlayModeObject" instance=ExtResource("3_ucyrb")]
+position = Vector2(184, -24)
+
+[node name="NextLevelSprite" type="Sprite2D" parent="PlayModeObject"]
+position = Vector2(-113, -24)
+texture = ExtResource("4_hgdib")
+
+[node name="TutoRedFlreFlyIcont" type="Sprite2D" parent="PlayModeObject"]
+position = Vector2(27, -53)
+texture = ExtResource("5_p8hxd")
+
+[node name="Red_firefly" parent="PlayModeObject" instance=ExtResource("6_lc84k")]
+position = Vector2(432, -34)
+stat = ExtResource("7_j62rw")
+action = SubResource("Resource_hblnf")
+
+[node name="Shadow" parent="PlayModeObject" instance=ExtResource("5_g3m3p")]
+position = Vector2(-105, -17)
+
+[node name="Camera2D" type="Camera2D" parent="PlayModeObject"]
+position = Vector2(20, -111)
+
+[node name="Death_zone" type="Area2D" parent="PlayModeObject"]
+position = Vector2(-174, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayModeObject/Death_zone"]
+position = Vector2(198, 8)
+shape = SubResource("RectangleShape2D_hblnf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayModeObject/Death_zone"]
+position = Vector2(191, -318)
+shape = SubResource("RectangleShape2D_hblnf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayModeObject"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_l53as")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PlayModeObject"]
+
+[node name="ColorRect" type="ColorRect" parent="PlayModeObject/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="MatchFire_start" parent="PlayModeObject" instance=ExtResource("6_46gci")]
+position = Vector2(-125, -24)
+action = ExtResource("11_j62rw")
+stat = ExtResource("12_v6gi3")
+metadata/_edit_lock_ = true
+
+[node name="MatchFire_end" parent="PlayModeObject" instance=ExtResource("6_46gci")]
+position = Vector2(199, -23)
+action = ExtResource("11_j62rw")
+stat = ExtResource("12_v6gi3")
+metadata/_edit_lock_ = true
+
+[node name="Darkness" parent="PlayModeObject" node_paths=PackedStringArray("lvl") instance=ExtResource("7_p8hxd")]
+position = Vector2(58, -139)
+lvl = NodePath("../..")
+
+[node name="Darkness_dialogue" type="AnimationPlayer" parent="PlayModeObject"]
+libraries = {
+&"": SubResource("AnimationLibrary_h351q")
+}
+autoplay = "Dialogue"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayModeObject"]
+offset_left = -31.0
+offset_top = -227.0
+offset_right = 249.0
+offset_bottom = -156.0
+bbcode_enabled = true
+text = "[wave amp=2 ][font=res://assets/font/yoster.ttf][center]It looks like this time you’ll be needing me.[/center] [/font] [/wave]"
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("8_lc84k")
+
+[node name="Label" type="Label" parent="PlayModeObject"]
+offset_left = -218.0
+offset_top = -248.0
+offset_right = 322.0
+offset_bottom = -175.0
+rotation = -0.000215624
+text = "When touched red firelies recharge your dash .
+Drag and drop the red firely's icon from 
+the building menu where you want to place it."
+label_settings = SubResource("LabelSettings_4ul1j")
+metadata/_edit_lock_ = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="PlayModeObject"]
+position = Vector2(21, -312)
+amount = 2
+lifetime = 1.3
+emission_shape = 3
+emission_rect_extents = Vector2(300, 1)
+gravity = Vector2(0, 400)
+
+[node name="EditModeObject" type="Node" parent="."]
+script = ExtResource("10_v6gi3")
+
+[node name="Decor_bottom" type="CanvasLayer" parent="EditModeObject"]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="DarknessBottom" type="Sprite2D" parent="EditModeObject/Decor_bottom"]
+position = Vector2(-2, 40)
+texture = ExtResource("11_rjodl")
+
+[node name="Red_Icon" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("16_rjodl")]
+position = Vector2(61, 34)
+attach_object = NodePath("../../PlayModeObject/Red_firefly")
+icon = ExtResource("17_o4lgy")
+
+[node name="Decor_top" type="CanvasLayer" parent="EditModeObject"]
+follow_viewport_enabled = true
+
+[node name="DarknessThumbBottom" type="Sprite2D" parent="EditModeObject/Decor_top"]
+position = Vector2(33, 38)
+texture = ExtResource("12_o4lgy")
+
+[node name="Inventory" type="Area2D" parent="EditModeObject"]
+position = Vector2(-17, -40)
+collision_layer = 0
+collision_mask = 4
+input_pickable = false
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EditModeObject/Inventory"]
+polygon = PackedVector2Array(-287, -285, -399, -285, -414, 192, 461, 197, 441, -292, 360, -291, 357, 49, -286, 51)
+
+[connection signal="body_entered" from="PlayModeObject/next_level" to="." method="_on_next_level_body_entered"]
+[connection signal="body_entered" from="PlayModeObject/Death_zone" to="." method="_on_death_zone_body_entered"]
+[connection signal="animation_finished" from="PlayModeObject/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

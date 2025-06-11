@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://cu7phur8yabw1"]
+
+[ext_resource type="Script" uid="uid://b41r47fwjrcea" path="res://scripts/little_brothers.gd" id="1_6k2us"]
+[ext_resource type="Texture2D" uid="uid://bwf3260pnp7q0" path="res://assets/sprites/darkness/Little_brothers.png" id="2_q4u4u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7haqp"]
+atlas = ExtResource("2_q4u4u")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixrn4"]
+atlas = ExtResource("2_q4u4u")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glke4"]
+atlas = ExtResource("2_q4u4u")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mhpj"]
+atlas = ExtResource("2_q4u4u")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k2us"]
+atlas = ExtResource("2_q4u4u")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4u4u"]
+atlas = ExtResource("2_q4u4u")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0de31"]
+atlas = ExtResource("2_q4u4u")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uk77"]
+atlas = ExtResource("2_q4u4u")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ls0e3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7haqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixrn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glke4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mhpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k2us")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4u4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0de31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uk77")
+}],
+"loop": false,
+"name": &"Close",
+"speed": 5.0
+}]
+
+[node name="Little_brothers" type="Node2D"]
+script = ExtResource("1_6k2us")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ls0e3")
+animation = &"Close"

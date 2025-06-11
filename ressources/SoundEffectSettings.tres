@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SoundEffectSettings" load_steps=3 format=3 uid="uid://d4ff4wudg2qt1"]
+
+[ext_resource type="Script" uid="uid://cylif0mdtnq5c" path="res://scripts/SoundEffectSettings.gd" id="1_2lbnp"]
+[ext_resource type="AudioStream" uid="uid://dgi28uo8cm221" path="res://assets/sfx/Atterissage Dylan.wav" id="2_kl7xu"]
+
+[resource]
+script = ExtResource("1_2lbnp")
+limit = 7
+type = 1
+sound_effect = ExtResource("2_kl7xu")
+volume = 0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://cylif0mdtnq5c"

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="inverse_firefly" load_steps=2 format=3 uid="uid://sh22cswtmivv"]
+
+[ext_resource type="Script" uid="uid://vnpi7556cb68" path="res://scripts/firefly/inverse_firefly.gd" id="1_178mw"]
+
+[resource]
+script = ExtResource("1_178mw")
+metadata/_custom_type_script = "uid://vnpi7556cb68"

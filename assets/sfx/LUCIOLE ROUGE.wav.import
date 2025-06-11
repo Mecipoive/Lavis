@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c1vjca7wm5r6m"
+path="res://.godot/imported/LUCIOLE ROUGE.wav-5b22eefee492a3f224ba7c13aa70e53b.sample"
+
+[deps]
+
+source_file="res://assets/sfx/LUCIOLE ROUGE.wav"
+dest_files=["res://.godot/imported/LUCIOLE ROUGE.wav-5b22eefee492a3f224ba7c13aa70e53b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

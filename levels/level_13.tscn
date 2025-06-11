@@ -1,0 +1,303 @@
+[gd_scene load_steps=32 format=4 uid="uid://dtqaavjcob386"]
+
+[ext_resource type="PackedScene" uid="uid://d275f3jjkcraa" path="res://scenes/darkness.tscn" id="1_q8c6i"]
+[ext_resource type="Script" uid="uid://ckyvges5g0aa1" path="res://scripts/level.gd" id="1_vfo5m"]
+[ext_resource type="Texture2D" uid="uid://dhmsf5pijexw5" path="res://assets/sprites/objects/next_level_sprite.png" id="2_hgva4"]
+[ext_resource type="PackedScene" uid="uid://doob1ujo878so" path="res://scenes/tiles.tscn" id="3_ielki"]
+[ext_resource type="PackedScene" uid="uid://deuo1aib8dwi7" path="res://scenes/match_fire.tscn" id="3_s0koc"]
+[ext_resource type="PackedScene" uid="uid://db3f2hbo2pnhp" path="res://scenes/next_level.tscn" id="4_s0koc"]
+[ext_resource type="Resource" uid="uid://cdqxl55qq3qyr" path="res://ressources/firefly/action/visibility_firefly.tres" id="4_vfo5m"]
+[ext_resource type="Resource" uid="uid://bpsyrk7wd277" path="res://ressources/match_fire/white_match_fire.tres" id="5_vav4y"]
+[ext_resource type="PackedScene" uid="uid://cn7r82jbxryhe" path="res://scenes/shadow.tscn" id="5_vfo5m"]
+[ext_resource type="Script" uid="uid://droyhbj783do6" path="res://scripts/edit_mode_object.gd" id="6_vav4y"]
+[ext_resource type="Texture2D" uid="uid://clwwau6q3b262" path="res://assets/sprites/darkness/Darkness_thumb_top.png" id="7_vqrpr"]
+[ext_resource type="Texture2D" uid="uid://c28tgw7sh0nle" path="res://assets/sprites/darkness/Darkness_bottom.png" id="8_pguqh"]
+[ext_resource type="PackedScene" uid="uid://ibavlslhpif0" path="res://scenes/firefly.tscn" id="8_vav4y"]
+[ext_resource type="Texture2D" uid="uid://cyi4csikgsrlo" path="res://assets/sprites/darkness/Darkness_thumb_bottom.png" id="9_5bduy"]
+[ext_resource type="Resource" uid="uid://ccarvogxygcgc" path="res://ressources/firefly/stat/red_firefly.tres" id="9_hojmx"]
+[ext_resource type="Script" uid="uid://cvbyfdjrm3e6r" path="res://scripts/firefly/reset_dash_firefly.gd" id="10_ea1m1"]
+[ext_resource type="Texture2D" uid="uid://bsj73tnuuyrv0" path="res://assets/sprites/darkness/Darkness_top.png" id="10_hojmx"]
+[ext_resource type="PackedScene" uid="uid://cu7phur8yabw1" path="res://scenes/little_brothers.tscn" id="14_f77jv"]
+[ext_resource type="PackedScene" uid="uid://rogmarxracvu" path="res://scenes/icon.tscn" id="16_f6xlm"]
+[ext_resource type="Resource" uid="uid://deprw8xxetdc3" path="res://ressources/icon/icon_red_firefly.tres" id="17_hojmx"]
+
+[sub_resource type="Resource" id="Resource_xxm17"]
+script = ExtResource("10_ea1m1")
+metadata/_custom_type_script = "uid://cvbyfdjrm3e6r"
+
+[sub_resource type="Resource" id="Resource_gse75"]
+script = ExtResource("10_ea1m1")
+metadata/_custom_type_script = "uid://cvbyfdjrm3e6r"
+
+[sub_resource type="Resource" id="Resource_ok5ww"]
+script = ExtResource("10_ea1m1")
+metadata/_custom_type_script = "uid://cvbyfdjrm3e6r"
+
+[sub_resource type="Resource" id="Resource_hojmx"]
+script = ExtResource("10_ea1m1")
+metadata/_custom_type_script = "uid://cvbyfdjrm3e6r"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ea1m1"]
+resource_local_to_scene = true
+size = Vector2(7, 333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6xlm"]
+resource_local_to_scene = true
+size = Vector2(6, 324.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxm17"]
+resource_local_to_scene = true
+size = Vector2(1262, 9.5)
+
+[sub_resource type="Animation" id="Animation_gwceb"]
+resource_name = "Death_animation_in"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3sk1a"]
+resource_name = "Death_animation_out"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l53as"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l53as"]
+_data = {
+&"Death_animation_in": SubResource("Animation_gwceb"),
+&"Death_animation_out": SubResource("Animation_3sk1a"),
+&"RESET": SubResource("Animation_l53as")
+}
+
+[node name="Level_13" type="Node2D"]
+script = ExtResource("1_vfo5m")
+level_number = 13
+cam_max_zoom = Vector2(1, 1)
+
+[node name="PlayModeObject" type="Node" parent="."]
+
+[node name="Darkness" parent="PlayModeObject" node_paths=PackedStringArray("lvl") instance=ExtResource("1_q8c6i")]
+position = Vector2(183, -187)
+rotation = -0.00558143
+lvl = NodePath("../..")
+
+[node name="NextLevelSprite" type="Sprite2D" parent="PlayModeObject"]
+position = Vector2(-60, -70)
+texture = ExtResource("2_hgva4")
+
+[node name="MatchFire" parent="PlayModeObject" instance=ExtResource("3_s0koc")]
+position = Vector2(0, -69)
+action = ExtResource("4_vfo5m")
+stat = ExtResource("5_vav4y")
+
+[node name="MatchFire2" parent="PlayModeObject" instance=ExtResource("3_s0koc")]
+position = Vector2(62, -278)
+action = ExtResource("4_vfo5m")
+stat = ExtResource("5_vav4y")
+metadata/_edit_lock_ = true
+
+[node name="Tiles" parent="PlayModeObject" instance=ExtResource("3_ielki")]
+position = Vector2(13, -38)
+tile_map_data = PackedByteArray("AAD5////AAAAAAoAAAD6////AAAEAAoAAAD7////AAAEAAoAAAD8////AAAEAAoAAAD9////AAAEAAoAAAACAPL/AAAEAAoAAAADAPL/AAAEAAoAAAAEAPL/AAAEAAoAAAAFAPL/AAAGAAoAAAD+////AAAEAAoAAAD/////AAAEAAoAAAAAAP//AAAEAAoAAAABAP//AAAEAAoAAAACAPv/AAAGAAYAAAACAPr/AAAGAAYAAAACAPn/AAAGAAYAAAACAPj/AAAGAAYAAAACAPf/AAAGAAYAAAACAPb/AAAGAAYAAAACAPX/AAAGAAYAAAACAPT/AAAGAAYAAAACAPP/AAAGAAYAAAACAP3/AAAEAAoAAAACAPz/AAAGAAYAAAACAP//AAACAAoAAAADAP//AAACAAoAAAAFAP//AAAGAAoAAAAEAP//AAAEAAoAAAACAP7/AAAEAAoAAAAEAP7/AAAEAAoAAAADAP7/AAAEAAoAAAADAP3/AAAEAAoAAAADAAAAAAAKAAgAAAADAAEAAAAKAAoAAAD8/wAAAAAKAAYAAAD8/wEAAAAKAAgAAAAEAPP/AAAKAAgAAAAEAPT/AAAKAAYAAAA=")
+
+[node name="Red_firefly" parent="PlayModeObject" instance=ExtResource("8_vav4y")]
+position = Vector2(480, -186)
+stat = ExtResource("9_hojmx")
+action = SubResource("Resource_xxm17")
+metadata/_edit_lock_ = true
+
+[node name="Red_firefly2" parent="PlayModeObject" instance=ExtResource("8_vav4y")]
+position = Vector2(495, -116)
+stat = ExtResource("9_hojmx")
+action = SubResource("Resource_gse75")
+metadata/_edit_lock_ = true
+
+[node name="Red_firefly3" parent="PlayModeObject" instance=ExtResource("8_vav4y")]
+position = Vector2(480, -57)
+stat = ExtResource("9_hojmx")
+action = SubResource("Resource_ok5ww")
+metadata/_edit_lock_ = true
+
+[node name="Red_firefly4" parent="PlayModeObject" instance=ExtResource("8_vav4y")]
+position = Vector2(484, -9)
+stat = ExtResource("9_hojmx")
+action = SubResource("Resource_hojmx")
+
+[node name="next_level" parent="PlayModeObject" instance=ExtResource("4_s0koc")]
+position = Vector2(83, -278)
+
+[node name="Shadow" parent="PlayModeObject" instance=ExtResource("5_vfo5m")]
+position = Vector2(-34, -63)
+
+[node name="Camera2D" type="Camera2D" parent="PlayModeObject"]
+position = Vector2(31, -138)
+zoom = Vector2(0.5, 0.5)
+limit_top = -326
+
+[node name="Death_zone" type="Area2D" parent="PlayModeObject"]
+position = Vector2(8, 16)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="PlayModeObject/Death_zone"]
+position = Vector2(-142, -187)
+shape = SubResource("RectangleShape2D_ea1m1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayModeObject/Death_zone"]
+position = Vector2(141, -185)
+shape = SubResource("RectangleShape2D_f6xlm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayModeObject/Death_zone"]
+position = Vector2(24, -17)
+shape = SubResource("RectangleShape2D_xxm17")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="PlayModeObject/Death_zone"]
+position = Vector2(-4, -363)
+shape = SubResource("RectangleShape2D_xxm17")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayModeObject"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_l53as")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PlayModeObject"]
+
+[node name="ColorRect" type="ColorRect" parent="PlayModeObject/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="PlayModeObject"]
+position = Vector2(20, -358)
+amount = 2
+lifetime = 1.3
+emission_shape = 3
+emission_rect_extents = Vector2(300, 1)
+gravity = Vector2(0, 400)
+
+[node name="EditModeObject" type="Node" parent="."]
+script = ExtResource("6_vav4y")
+
+[node name="Decor_bottom" type="CanvasLayer" parent="EditModeObject"]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="Little_brothers" parent="EditModeObject/Decor_bottom" instance=ExtResource("14_f77jv")]
+position = Vector2(-182, -122)
+
+[node name="Little_brothers2" parent="EditModeObject/Decor_bottom" instance=ExtResource("14_f77jv")]
+position = Vector2(178, -60)
+
+[node name="Little_brothers3" parent="EditModeObject/Decor_bottom" instance=ExtResource("14_f77jv")]
+position = Vector2(-183, -39)
+
+[node name="Little_brothers4" parent="EditModeObject/Decor_bottom" instance=ExtResource("14_f77jv")]
+position = Vector2(-193, -177)
+
+[node name="Little_brothers5" parent="EditModeObject/Decor_bottom" instance=ExtResource("14_f77jv")]
+position = Vector2(-204, -245)
+
+[node name="Little_brothers6" parent="EditModeObject/Decor_bottom" instance=ExtResource("14_f77jv")]
+position = Vector2(-176, -220)
+
+[node name="Little_brothers7" parent="EditModeObject/Decor_bottom" instance=ExtResource("14_f77jv")]
+position = Vector2(217, -132)
+
+[node name="Little_brothers8" parent="EditModeObject/Decor_bottom" instance=ExtResource("14_f77jv")]
+position = Vector2(200, -287)
+
+[node name="Little_brothers9" parent="EditModeObject/Decor_bottom" instance=ExtResource("14_f77jv")]
+position = Vector2(249, -245)
+
+[node name="DarknessThumbTop" type="Sprite2D" parent="EditModeObject/Decor_bottom"]
+position = Vector2(286, 51)
+texture = ExtResource("7_vqrpr")
+
+[node name="DarknessBottom" type="Sprite2D" parent="EditModeObject/Decor_bottom"]
+position = Vector2(98, 53)
+texture = ExtResource("8_pguqh")
+
+[node name="Red_Icon" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("16_f6xlm")]
+position = Vector2(161, 40)
+attach_object = NodePath("../../PlayModeObject/Red_firefly")
+icon = ExtResource("17_hojmx")
+
+[node name="Red_Icon2" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("16_f6xlm")]
+position = Vector2(193, 42)
+attach_object = NodePath("../../PlayModeObject/Red_firefly2")
+icon = ExtResource("17_hojmx")
+
+[node name="Red_Icon3" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("16_f6xlm")]
+position = Vector2(129, 38)
+attach_object = NodePath("../../PlayModeObject/Red_firefly3")
+icon = ExtResource("17_hojmx")
+
+[node name="Red_Icon4" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("16_f6xlm")]
+position = Vector2(99, 39)
+attach_object = NodePath("../../PlayModeObject/Red_firefly4")
+icon = ExtResource("17_hojmx")
+
+[node name="Decor_top" type="CanvasLayer" parent="EditModeObject"]
+layer = 0
+follow_viewport_enabled = true
+
+[node name="DarknessThumbBottom" type="Sprite2D" parent="EditModeObject/Decor_top"]
+position = Vector2(133, 51)
+texture = ExtResource("9_5bduy")
+
+[node name="DarknessTop" type="Sprite2D" parent="EditModeObject/Decor_top"]
+position = Vector2(315, 52)
+texture = ExtResource("10_hojmx")
+
+[node name="Inventory" type="Area2D" parent="EditModeObject"]
+position = Vector2(-8, -42)
+collision_layer = 0
+collision_mask = 4
+input_pickable = false
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EditModeObject/Inventory"]
+polygon = PackedVector2Array(-156, -292, -400, -283, -414, 192, 461, 197, 441, -292, 179, -293, 177, 49, -152, 48)
+
+[connection signal="body_entered" from="PlayModeObject/next_level" to="." method="_on_next_level_body_entered"]
+[connection signal="body_entered" from="PlayModeObject/Death_zone" to="." method="_on_death_zone_body_entered"]
+[connection signal="animation_finished" from="PlayModeObject/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

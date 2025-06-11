@@ -1,0 +1,213 @@
+[gd_scene load_steps=24 format=4 uid="uid://ngbjluivk2ht"]
+
+[ext_resource type="Script" uid="uid://ckyvges5g0aa1" path="res://scripts/level.gd" id="1_vkd0v"]
+[ext_resource type="PackedScene" uid="uid://ibavlslhpif0" path="res://scenes/firefly.tscn" id="2_yafm2"]
+[ext_resource type="Resource" uid="uid://cilvneqbvfi8k" path="res://ressources/firefly/stat/white_firefly.tres" id="3_46211"]
+[ext_resource type="Resource" uid="uid://cdqxl55qq3qyr" path="res://ressources/firefly/action/visibility_firefly.tres" id="4_t5hu4"]
+[ext_resource type="PackedScene" uid="uid://doob1ujo878so" path="res://scenes/tiles.tscn" id="6_mqvtj"]
+[ext_resource type="PackedScene" uid="uid://cn7r82jbxryhe" path="res://scenes/shadow.tscn" id="7_8swdu"]
+[ext_resource type="Texture2D" uid="uid://dhmsf5pijexw5" path="res://assets/sprites/objects/next_level_sprite.png" id="7_svivd"]
+[ext_resource type="PackedScene" uid="uid://db3f2hbo2pnhp" path="res://scenes/next_level.tscn" id="8_xe1ru"]
+[ext_resource type="PackedScene" uid="uid://deuo1aib8dwi7" path="res://scenes/match_fire.tscn" id="9_6anhs"]
+[ext_resource type="PackedScene" uid="uid://d275f3jjkcraa" path="res://scenes/darkness.tscn" id="10_e28pm"]
+[ext_resource type="Resource" uid="uid://bpsyrk7wd277" path="res://ressources/match_fire/white_match_fire.tres" id="10_yafm2"]
+[ext_resource type="Script" uid="uid://droyhbj783do6" path="res://scripts/edit_mode_object.gd" id="13_kyq6o"]
+[ext_resource type="Texture2D" uid="uid://clwwau6q3b262" path="res://assets/sprites/darkness/Darkness_thumb_top.png" id="14_4gw27"]
+[ext_resource type="Texture2D" uid="uid://c28tgw7sh0nle" path="res://assets/sprites/darkness/Darkness_bottom.png" id="15_mb3d3"]
+[ext_resource type="PackedScene" uid="uid://rogmarxracvu" path="res://scenes/icon.tscn" id="17_eg35p"]
+[ext_resource type="Resource" uid="uid://c41r22lrbs5ub" path="res://ressources/icon/icon_white_firefly.tres" id="18_67vg4"]
+[ext_resource type="Texture2D" uid="uid://cyi4csikgsrlo" path="res://assets/sprites/darkness/Darkness_thumb_bottom.png" id="18_h3b7p"]
+[ext_resource type="Texture2D" uid="uid://bsj73tnuuyrv0" path="res://assets/sprites/darkness/Darkness_top.png" id="19_dvo5v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16jej"]
+resource_local_to_scene = true
+size = Vector2(1105, 7)
+
+[sub_resource type="Animation" id="Animation_gwceb"]
+resource_name = "Death_animation_in"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3sk1a"]
+resource_name = "Death_animation_out"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l53as"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l53as"]
+_data = {
+&"Death_animation_in": SubResource("Animation_gwceb"),
+&"Death_animation_out": SubResource("Animation_3sk1a"),
+&"RESET": SubResource("Animation_l53as")
+}
+
+[node name="Level_3" type="Node2D"]
+script = ExtResource("1_vkd0v")
+level_number = 3
+cam_max_zoom = Vector2(1, 1)
+
+[node name="PlayModeObject" type="Node" parent="."]
+
+[node name="White_firefly" parent="PlayModeObject" instance=ExtResource("2_yafm2")]
+position = Vector2(523, -54)
+stat = ExtResource("3_46211")
+action = ExtResource("4_t5hu4")
+metadata/_edit_lock_ = true
+
+[node name="White_firefly2" parent="PlayModeObject" instance=ExtResource("2_yafm2")]
+position = Vector2(524, -368)
+stat = ExtResource("3_46211")
+action = ExtResource("4_t5hu4")
+metadata/_edit_lock_ = true
+
+[node name="Tiles" parent="PlayModeObject" instance=ExtResource("6_mqvtj")]
+position = Vector2(108, -72)
+tile_map_data = PackedByteArray("AADm//T/AAAAAAgAAADm//P/AAAAAAgAAAAOAPv/AAAGAAQAAAAOAPr/AAAGAAQAAAAOAPn/AAAGAAQAAAAOAPj/AAAGAAQAAAAOAPf/AAAGAAQAAAAOAPb/AAAGAAQAAAAOAPX/AAAGAAQAAAAOAPT/AAAGAAQAAAAOAPP/AAAGAAQAAADm//L/AAAAAAYAAADm//H/AAAAAAQAAADm//D/AAAAAAAAAADn//D/AAAEAAAAAADo//D/AAAEAAAAAADp//D/AAAEAAAAAADq//D/AAAEAAAAAADr//D/AAAEAAAAAADs//D/AAAEAAAAAADt//D/AAAEAAAAAADu//D/AAAEAAAAAADv//D/AAAEAAAAAADw//D/AAAEAAAAAADx//D/AAAEAAAAAADy//D/AAAEAAAAAADz//D/AAAEAAAAAAD0//D/AAAEAAAAAAD1//D/AAAEAAAAAAD2//D/AAAEAAAAAAD3//D/AAAEAAAAAAD4//D/AAAEAAAAAAD5//D/AAAEAAAAAAD6//D/AAAEAAAAAAD7//D/AAAEAAAAAAD8//D/AAAEAAAAAAD9//D/AAAEAAAAAAD+//D/AAAEAAAAAAD///D/AAAEAAAAAAAAAPD/AAAEAAAAAAABAPD/AAAEAAAAAAACAPD/AAAEAAAAAAADAPD/AAAEAAAAAAAEAPD/AAAEAAAAAAAFAPD/AAAEAAAAAAAGAPD/AAAEAAAAAAAHAPD/AAAEAAAAAAAIAPD/AAAEAAAAAAAJAPD/AAAEAAAAAAAKAPD/AAAEAAAAAAALAPD/AAAEAAAAAAAMAPD/AAAEAAAAAAANAPD/AAAEAAAAAAAOAPD/AAAGAAAAAAAOAPH/AAAGAAIAAAAOAPL/AAAGAAQAAADn//T/AAACAAQAAADo//T/AAAEAAYAAADp//T/AAAEAAYAAADq//T/AAACAAQAAADr//T/AAACAAYAAADw//b/AAAEAAQAAADx//b/AAAEAAYAAADy//b/AAAEAAYAAADz//b/AAAEAAYAAAD0//b/AAACAAQAAAD1//b/AAACAAYAAAD5//j/AAAEAAQAAAD6//j/AAAEAAYAAAD7//j/AAAEAAYAAAD8//j/AAAEAAYAAAD9//j/AAACAAQAAAD+//j/AAACAAYAAAABAPv/AAAEAAQAAAACAPv/AAACAAQAAAADAPv/AAAEAAYAAAAEAPv/AAAEAAYAAAAFAPv/AAACAAYAAAANAP//AAAEAAoAAAAMAP//AAAEAAoAAAALAP//AAAAAAoAAAAOAPz/AAAGAAQAAAAOAP3/AAAGAAQAAAAOAP7/AAAGAAQAAAAOAP//AAAGAAoAAADw//H/AAAEAAgAAADw//L/AAAEAAgAAADw//P/AAAEAAgAAADw//T/AAAEAAgAAADw//X/AAACAAgAAAD6//H/AAAEAAgAAAD6//L/AAAEAAgAAAD6//P/AAAEAAgAAAD6//T/AAAEAAgAAAD6//X/AAAEAAgAAAD6//b/AAAEAAgAAAD6//f/AAACAAgAAAD4//H/AAAKAAoAAAALAPH/AAAKAAoAAAALAPL/AAAKAAYAAAD4//L/AAAKAAYAAAACAPH/AAAKAAoAAADs//H/AAAKAAoAAADm//X/AAAKAAoAAAANAAAAAAAKAAgAAAANAAIAAAAKAAYAAAANAAEAAAAKAAoAAAACAPL/AAAKAAoAAAA=")
+
+[node name="next_level" parent="PlayModeObject" instance=ExtResource("8_xe1ru")]
+position = Vector2(316, -104)
+
+[node name="NextLevelSprite" type="Sprite2D" parent="PlayModeObject"]
+position = Vector2(-269, -279)
+texture = ExtResource("7_svivd")
+
+[node name="Shadow" parent="PlayModeObject" instance=ExtResource("7_8swdu")]
+position = Vector2(-271, -271)
+
+[node name="Camera2D" type="Camera2D" parent="PlayModeObject"]
+position = Vector2(16, -141)
+
+[node name="Death_zone" type="Area2D" parent="PlayModeObject"]
+position = Vector2(-174, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayModeObject/Death_zone"]
+position = Vector2(224, 8.5)
+shape = SubResource("RectangleShape2D_16jej")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayModeObject"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_l53as")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PlayModeObject"]
+
+[node name="ColorRect" type="ColorRect" parent="PlayModeObject/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="MatchFire_start" parent="PlayModeObject" instance=ExtResource("9_6anhs")]
+position = Vector2(-237, -279)
+action = ExtResource("4_t5hu4")
+stat = ExtResource("10_yafm2")
+metadata/_edit_lock_ = true
+
+[node name="MatchFire_end" parent="PlayModeObject" instance=ExtResource("9_6anhs")]
+position = Vector2(292, -104)
+action = ExtResource("4_t5hu4")
+stat = ExtResource("10_yafm2")
+metadata/_edit_lock_ = true
+
+[node name="Darkness" parent="PlayModeObject" node_paths=PackedStringArray("lvl") instance=ExtResource("10_e28pm")]
+position = Vector2(-107, -90)
+lvl = NodePath("../..")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="PlayModeObject"]
+position = Vector2(21, -312)
+amount = 2
+lifetime = 1.3
+emission_shape = 3
+emission_rect_extents = Vector2(300, 1)
+gravity = Vector2(0, 400)
+
+[node name="EditModeObject" type="Node" parent="."]
+script = ExtResource("13_kyq6o")
+
+[node name="Decor_bottom" type="CanvasLayer" parent="EditModeObject"]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="DarknessThumbTop" type="Sprite2D" parent="EditModeObject/Decor_bottom"]
+position = Vector2(-107, 21)
+texture = ExtResource("14_4gw27")
+
+[node name="DarknessBottom" type="Sprite2D" parent="EditModeObject/Decor_bottom"]
+position = Vector2(-193, 68)
+texture = ExtResource("15_mb3d3")
+
+[node name="White_Icon" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("17_eg35p")]
+position = Vector2(-134, 49)
+attach_object = NodePath("../../PlayModeObject/White_firefly")
+icon = ExtResource("18_67vg4")
+
+[node name="White_Icon2" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("17_eg35p")]
+position = Vector2(-103, 50)
+attach_object = NodePath("../../PlayModeObject/White_firefly2")
+icon = ExtResource("18_67vg4")
+
+[node name="Decor_top" type="CanvasLayer" parent="EditModeObject"]
+follow_viewport_enabled = true
+
+[node name="DarknessThumbBottom" type="Sprite2D" parent="EditModeObject/Decor_top"]
+position = Vector2(-158, 66)
+texture = ExtResource("18_h3b7p")
+
+[node name="DarknessTop" type="Sprite2D" parent="EditModeObject/Decor_top"]
+position = Vector2(-78, 22)
+texture = ExtResource("19_dvo5v")
+
+[node name="Inventory" type="Area2D" parent="EditModeObject"]
+position = Vector2(-17, -40)
+collision_layer = 0
+collision_mask = 4
+input_pickable = false
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EditModeObject/Inventory"]
+polygon = PackedVector2Array(-287, -285, -399, -285, -414, 192, 461, 197, 441, -292, 360, -291, 357, 49, -289, 45)
+
+[connection signal="body_entered" from="PlayModeObject/next_level" to="." method="_on_next_level_body_entered"]
+[connection signal="body_entered" from="PlayModeObject/Death_zone" to="." method="_on_death_zone_body_entered"]
+[connection signal="animation_finished" from="PlayModeObject/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

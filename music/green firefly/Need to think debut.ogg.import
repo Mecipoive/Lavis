@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cg6ikwwf0sasd"
+path="res://.godot/imported/Need to think debut.ogg-ad2b84641cefb1916e212890b6d34c40.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/green firefly/Need to think debut.ogg"
+dest_files=["res://.godot/imported/Need to think debut.ogg-ad2b84641cefb1916e212890b6d34c40.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=118.0
+beat_count=0
+bar_beats=4

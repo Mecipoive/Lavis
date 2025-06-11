@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="stat_firefly" load_steps=2 format=3 uid="uid://c71os2h5xuco7"]
+
+[ext_resource type="Script" uid="uid://civ5qv0krccwf" path="res://scripts/firefly/stat_firefly.gd" id="1_5ytlp"]
+
+[resource]
+script = ExtResource("1_5ytlp")
+color = Color(0.207843, 0.176471, 1, 1)
+radius = 200.0
+metadata/_custom_type_script = "uid://civ5qv0krccwf"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="stat_icon" load_steps=3 format=3 uid="uid://drjlwjnsco6rw"]
+
+[ext_resource type="Script" uid="uid://bqua7tdh5652x" path="res://scripts/stat_icon.gd" id="1_elt6n"]
+[ext_resource type="Texture2D" uid="uid://cfq6rajxyd8l" path="res://assets/sprites/icon/Blue_flre_fly_icon.png" id="2_jvdne"]
+
+[resource]
+script = ExtResource("1_elt6n")
+sprite = ExtResource("2_jvdne")
+name = "Blue Firefly"
+metadata/_custom_type_script = "uid://bqua7tdh5652x"

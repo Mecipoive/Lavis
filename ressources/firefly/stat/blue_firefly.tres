@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="animated_stat_firefly" load_steps=3 format=3 uid="uid://dhy5ybjtrgxb8"]
+
+[ext_resource type="Script" uid="uid://cdc8vakl3jmo6" path="res://scripts/firefly/animated_stat_firefly.gd" id="1_uylvl"]
+[ext_resource type="SpriteFrames" uid="uid://u1che5dq75in" path="res://SpriteFrames/Blue_firefly.tres" id="2_uylvl"]
+
+[resource]
+script = ExtResource("1_uylvl")
+spriteframes = ExtResource("2_uylvl")
+color = Color(0.207843, 0.176471, 1, 1)
+radius = 200.0
+metadata/_custom_type_script = "uid://civ5qv0krccwf"

@@ -1,0 +1,246 @@
+[gd_scene load_steps=30 format=4 uid="uid://cpux0cwv336h7"]
+
+[ext_resource type="Script" uid="uid://ckyvges5g0aa1" path="res://scripts/level.gd" id="1_otq2s"]
+[ext_resource type="Texture2D" uid="uid://dhmsf5pijexw5" path="res://assets/sprites/objects/next_level_sprite.png" id="2_v27dr"]
+[ext_resource type="PackedScene" uid="uid://db3f2hbo2pnhp" path="res://scenes/next_level.tscn" id="3_3bxks"]
+[ext_resource type="PackedScene" uid="uid://d275f3jjkcraa" path="res://scenes/darkness.tscn" id="4_et7ot"]
+[ext_resource type="PackedScene" uid="uid://deuo1aib8dwi7" path="res://scenes/match_fire.tscn" id="5_3bxks"]
+[ext_resource type="PackedScene" uid="uid://doob1ujo878so" path="res://scenes/tiles.tscn" id="5_v8hqk"]
+[ext_resource type="PackedScene" uid="uid://cn7r82jbxryhe" path="res://scenes/shadow.tscn" id="6_dr5uc"]
+[ext_resource type="Resource" uid="uid://cdqxl55qq3qyr" path="res://ressources/firefly/action/visibility_firefly.tres" id="6_v8hqk"]
+[ext_resource type="Resource" uid="uid://bpsyrk7wd277" path="res://ressources/match_fire/white_match_fire.tres" id="7_dr5uc"]
+[ext_resource type="Script" uid="uid://droyhbj783do6" path="res://scripts/edit_mode_object.gd" id="7_pj5p5"]
+[ext_resource type="PackedScene" uid="uid://ibavlslhpif0" path="res://scenes/firefly.tscn" id="8_f77jv"]
+[ext_resource type="Texture2D" uid="uid://c28tgw7sh0nle" path="res://assets/sprites/darkness/Darkness_bottom.png" id="8_s4cjh"]
+[ext_resource type="Resource" uid="uid://cilvneqbvfi8k" path="res://ressources/firefly/stat/white_firefly.tres" id="9_3nr6x"]
+[ext_resource type="Texture2D" uid="uid://cyi4csikgsrlo" path="res://assets/sprites/darkness/Darkness_thumb_bottom.png" id="9_mekp2"]
+[ext_resource type="Script" uid="uid://b3xufg6j8qtex" path="res://scripts/firefly/visibility_firefly.gd" id="10_cdv1y"]
+[ext_resource type="Resource" uid="uid://ccarvogxygcgc" path="res://ressources/firefly/stat/red_firefly.tres" id="11_khiq0"]
+[ext_resource type="Script" uid="uid://cvbyfdjrm3e6r" path="res://scripts/firefly/reset_dash_firefly.gd" id="12_1o63j"]
+[ext_resource type="PackedScene" uid="uid://rogmarxracvu" path="res://scenes/icon.tscn" id="17_ibos3"]
+[ext_resource type="Resource" uid="uid://c41r22lrbs5ub" path="res://ressources/icon/icon_white_firefly.tres" id="18_7wsh2"]
+[ext_resource type="Resource" uid="uid://deprw8xxetdc3" path="res://ressources/icon/icon_red_firefly.tres" id="19_3fbc1"]
+
+[sub_resource type="Resource" id="Resource_xgj4q"]
+script = ExtResource("10_cdv1y")
+metadata/_custom_type_script = "uid://b3xufg6j8qtex"
+
+[sub_resource type="Resource" id="Resource_e7qrq"]
+script = ExtResource("10_cdv1y")
+metadata/_custom_type_script = "uid://b3xufg6j8qtex"
+
+[sub_resource type="Resource" id="Resource_6jlfp"]
+script = ExtResource("12_1o63j")
+metadata/_custom_type_script = "uid://cvbyfdjrm3e6r"
+
+[sub_resource type="Resource" id="Resource_bgp1u"]
+script = ExtResource("12_1o63j")
+metadata/_custom_type_script = "uid://cvbyfdjrm3e6r"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3ppe"]
+resource_local_to_scene = true
+size = Vector2(1420, 12)
+
+[sub_resource type="Animation" id="Animation_gwceb"]
+resource_name = "Death_animation_in"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3sk1a"]
+resource_name = "Death_animation_out"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l53as"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l53as"]
+_data = {
+&"Death_animation_in": SubResource("Animation_gwceb"),
+&"Death_animation_out": SubResource("Animation_3sk1a"),
+&"RESET": SubResource("Animation_l53as")
+}
+
+[node name="Level_14" type="Node2D"]
+script = ExtResource("1_otq2s")
+level_number = 14
+cam_max_zoom = Vector2(0.7, 0.7)
+
+[node name="PlayModeObject" type="Node" parent="."]
+
+[node name="NextLevelSprite" type="Sprite2D" parent="PlayModeObject"]
+position = Vector2(-368, 25)
+texture = ExtResource("2_v27dr")
+
+[node name="next_level" parent="PlayModeObject" instance=ExtResource("3_3bxks")]
+position = Vector2(422, -152)
+
+[node name="Darkness" parent="PlayModeObject" node_paths=PackedStringArray("lvl") instance=ExtResource("4_et7ot")]
+position = Vector2(-1, -245)
+lvl = NodePath("../..")
+
+[node name="MatchFire" parent="PlayModeObject" instance=ExtResource("5_3bxks")]
+position = Vector2(-327, 25)
+action = ExtResource("6_v8hqk")
+stat = ExtResource("7_dr5uc")
+metadata/_edit_lock_ = true
+
+[node name="MatchFire2" parent="PlayModeObject" instance=ExtResource("5_3bxks")]
+position = Vector2(386, -152)
+action = ExtResource("6_v8hqk")
+stat = ExtResource("7_dr5uc")
+metadata/_edit_lock_ = true
+
+[node name="White_firefly" parent="PlayModeObject" instance=ExtResource("8_f77jv")]
+position = Vector2(607, -24)
+stat = ExtResource("9_3nr6x")
+action = SubResource("Resource_xgj4q")
+
+[node name="White_firefly2" parent="PlayModeObject" instance=ExtResource("8_f77jv")]
+position = Vector2(611, -126)
+stat = ExtResource("9_3nr6x")
+action = SubResource("Resource_e7qrq")
+
+[node name="Red_firefly" parent="PlayModeObject" instance=ExtResource("8_f77jv")]
+position = Vector2(610, 79)
+stat = ExtResource("11_khiq0")
+action = SubResource("Resource_6jlfp")
+
+[node name="Red_firefly2" parent="PlayModeObject" instance=ExtResource("8_f77jv")]
+position = Vector2(618, 156)
+stat = ExtResource("11_khiq0")
+action = SubResource("Resource_bgp1u")
+
+[node name="Tiles" parent="PlayModeObject" instance=ExtResource("5_v8hqk")]
+position = Vector2(108, -72)
+tile_map_data = PackedByteArray("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")
+
+[node name="Shadow" parent="PlayModeObject" instance=ExtResource("6_dr5uc")]
+position = Vector2(-339, 33)
+
+[node name="Camera2D" type="Camera2D" parent="PlayModeObject"]
+position = Vector2(16, -141)
+
+[node name="Death_zone" type="Area2D" parent="PlayModeObject"]
+position = Vector2(-174, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayModeObject/Death_zone"]
+position = Vector2(209, 143)
+shape = SubResource("RectangleShape2D_w3ppe")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayModeObject/Death_zone"]
+position = Vector2(214, -428)
+shape = SubResource("RectangleShape2D_w3ppe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayModeObject"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_l53as")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PlayModeObject"]
+
+[node name="ColorRect" type="ColorRect" parent="PlayModeObject/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="PlayModeObject"]
+position = Vector2(25, -400)
+amount = 2
+lifetime = 1.3
+emission_shape = 3
+emission_rect_extents = Vector2(300, 1)
+gravity = Vector2(0, 400)
+
+[node name="EditModeObject" type="Node" parent="."]
+script = ExtResource("7_pj5p5")
+
+[node name="Decor_bottom" type="CanvasLayer" parent="EditModeObject"]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="DarknessBottom" type="Sprite2D" parent="EditModeObject/Decor_bottom"]
+position = Vector2(-56, 134)
+texture = ExtResource("8_s4cjh")
+
+[node name="White_Icon" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("17_ibos3")]
+position = Vector2(-86, 116)
+attach_object = NodePath("../../PlayModeObject/White_firefly")
+icon = ExtResource("18_7wsh2")
+
+[node name="White_Icon2" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("17_ibos3")]
+position = Vector2(-52, 117)
+attach_object = NodePath("../../PlayModeObject/White_firefly2")
+icon = ExtResource("18_7wsh2")
+
+[node name="Red_Icon" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("17_ibos3")]
+position = Vector2(9, 117)
+attach_object = NodePath("../../PlayModeObject/Red_firefly")
+icon = ExtResource("19_3fbc1")
+
+[node name="Red_Icon3" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("17_ibos3")]
+position = Vector2(-20, 116)
+attach_object = NodePath("../../PlayModeObject/Red_firefly2")
+icon = ExtResource("19_3fbc1")
+
+[node name="Decor_top" type="CanvasLayer" parent="EditModeObject"]
+follow_viewport_enabled = true
+
+[node name="DarknessThumbBottom" type="Sprite2D" parent="EditModeObject/Decor_top"]
+position = Vector2(-21, 132)
+texture = ExtResource("9_mekp2")
+
+[node name="Inventory" type="Area2D" parent="EditModeObject"]
+position = Vector2(-12, 112)
+collision_layer = 0
+collision_mask = 4
+input_pickable = false
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EditModeObject/Inventory"]
+polygon = PackedVector2Array(-405, -510, -573, -509, -562, 189, 604, 206, 607, -509, 484, -508, 486, -48, -405, -47)
+
+[connection signal="body_entered" from="PlayModeObject/next_level" to="." method="_on_next_level_body_entered"]
+[connection signal="body_entered" from="PlayModeObject/Death_zone" to="." method="_on_death_zone_body_entered"]
+[connection signal="animation_finished" from="PlayModeObject/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

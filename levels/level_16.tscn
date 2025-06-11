@@ -1,0 +1,579 @@
+[gd_scene load_steps=45 format=4 uid="uid://b6usdoe7kv7mv"]
+
+[ext_resource type="Script" uid="uid://ckyvges5g0aa1" path="res://scripts/level.gd" id="1_hyfp4"]
+[ext_resource type="Texture2D" uid="uid://dhmsf5pijexw5" path="res://assets/sprites/objects/next_level_sprite.png" id="2_3n2sn"]
+[ext_resource type="PackedScene" uid="uid://db3f2hbo2pnhp" path="res://scenes/next_level.tscn" id="3_om4q0"]
+[ext_resource type="PackedScene" uid="uid://d275f3jjkcraa" path="res://scenes/darkness.tscn" id="4_a50we"]
+[ext_resource type="PackedScene" uid="uid://doob1ujo878so" path="res://scenes/tiles.tscn" id="5_inh47"]
+[ext_resource type="PackedScene" uid="uid://cn7r82jbxryhe" path="res://scenes/shadow.tscn" id="6_6uant"]
+[ext_resource type="Script" uid="uid://droyhbj783do6" path="res://scripts/edit_mode_object.gd" id="7_frcq8"]
+[ext_resource type="Texture2D" uid="uid://clwwau6q3b262" path="res://assets/sprites/darkness/Darkness_thumb_top.png" id="8_t3bll"]
+[ext_resource type="Script" uid="uid://civ5qv0krccwf" path="res://scripts/firefly/stat_firefly.gd" id="9_b7bkq"]
+[ext_resource type="Texture2D" uid="uid://c28tgw7sh0nle" path="res://assets/sprites/darkness/Darkness_bottom.png" id="9_l2vy3"]
+[ext_resource type="Resource" uid="uid://cur5ptlx1oqwc" path="res://ressources/firefly/action/inverse_visibility_firefly.tres" id="10_4qk2l"]
+[ext_resource type="Texture2D" uid="uid://bsj73tnuuyrv0" path="res://assets/sprites/darkness/Darkness_top.png" id="10_7oc5t"]
+[ext_resource type="PackedScene" uid="uid://ibavlslhpif0" path="res://scenes/firefly.tscn" id="10_igkw2"]
+[ext_resource type="Resource" uid="uid://db61hum1raluq" path="res://ressources/match_fire/green_match_fire.tres" id="11_dg6qb"]
+[ext_resource type="Resource" uid="uid://ccarvogxygcgc" path="res://ressources/firefly/stat/red_firefly.tres" id="11_g6v13"]
+[ext_resource type="Texture2D" uid="uid://cyi4csikgsrlo" path="res://assets/sprites/darkness/Darkness_thumb_bottom.png" id="11_igkw2"]
+[ext_resource type="Resource" uid="uid://dhy5ybjtrgxb8" path="res://ressources/firefly/stat/blue_firefly.tres" id="11_pqe4w"]
+[ext_resource type="Script" uid="uid://b0hm8usj1cvny" path="res://scripts/firefly/protect_firefly.gd" id="12_g10n6"]
+[ext_resource type="PackedScene" uid="uid://deuo1aib8dwi7" path="res://scenes/match_fire.tscn" id="12_inh47"]
+[ext_resource type="Script" uid="uid://cvbyfdjrm3e6r" path="res://scripts/firefly/reset_dash_firefly.gd" id="12_pqe4w"]
+[ext_resource type="Script" uid="uid://b3xufg6j8qtex" path="res://scripts/firefly/visibility_firefly.gd" id="13_6uant"]
+[ext_resource type="Resource" uid="uid://cilvneqbvfi8k" path="res://ressources/firefly/stat/white_firefly.tres" id="14_frcq8"]
+[ext_resource type="PackedScene" uid="uid://xgowe2uymog6" path="res://scenes/Enemy.tscn" id="15_6uant"]
+[ext_resource type="PackedScene" uid="uid://rogmarxracvu" path="res://scenes/icon.tscn" id="17_g10n6"]
+[ext_resource type="Resource" uid="uid://deprw8xxetdc3" path="res://ressources/icon/icon_red_firefly.tres" id="18_b7bkq"]
+[ext_resource type="Resource" uid="uid://drjlwjnsco6rw" path="res://ressources/icon/icon_blue_firefly.tres" id="20_g10n6"]
+[ext_resource type="PackedScene" uid="uid://cu7phur8yabw1" path="res://scenes/little_brothers.tscn" id="20_n0jk3"]
+
+[sub_resource type="Resource" id="Resource_t3bll"]
+script = ExtResource("13_6uant")
+metadata/_custom_type_script = "uid://b3xufg6j8qtex"
+
+[sub_resource type="Resource" id="Resource_igkw2"]
+script = ExtResource("13_6uant")
+metadata/_custom_type_script = "uid://b3xufg6j8qtex"
+
+[sub_resource type="Resource" id="Resource_8o4r1"]
+script = ExtResource("13_6uant")
+metadata/_custom_type_script = "uid://b3xufg6j8qtex"
+
+[sub_resource type="Resource" id="Resource_042fp"]
+script = ExtResource("9_b7bkq")
+color = Color(1, 1, 1, 1)
+radius = 300.0
+metadata/_custom_type_script = "uid://civ5qv0krccwf"
+
+[sub_resource type="Resource" id="Resource_v5ho3"]
+script = ExtResource("13_6uant")
+metadata/_custom_type_script = "uid://b3xufg6j8qtex"
+
+[sub_resource type="Resource" id="Resource_jjyk6"]
+script = ExtResource("9_b7bkq")
+color = Color(1, 1, 1, 1)
+radius = 300.0
+metadata/_custom_type_script = "uid://civ5qv0krccwf"
+
+[sub_resource type="Resource" id="Resource_b7bkq"]
+script = ExtResource("12_g10n6")
+metadata/_custom_type_script = "uid://b0hm8usj1cvny"
+
+[sub_resource type="Resource" id="Resource_g10n6"]
+script = ExtResource("12_g10n6")
+metadata/_custom_type_script = "uid://b0hm8usj1cvny"
+
+[sub_resource type="Resource" id="Resource_gfi5s"]
+script = ExtResource("12_g10n6")
+metadata/_custom_type_script = "uid://b0hm8usj1cvny"
+
+[sub_resource type="Resource" id="Resource_2onu1"]
+script = ExtResource("12_pqe4w")
+metadata/_custom_type_script = "uid://cvbyfdjrm3e6r"
+
+[sub_resource type="Resource" id="Resource_4qk2l"]
+script = ExtResource("12_pqe4w")
+metadata/_custom_type_script = "uid://cvbyfdjrm3e6r"
+
+[sub_resource type="Resource" id="Resource_dg6qb"]
+script = ExtResource("12_pqe4w")
+metadata/_custom_type_script = "uid://cvbyfdjrm3e6r"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6v13"]
+resource_local_to_scene = true
+size = Vector2(1420, 12)
+
+[sub_resource type="Animation" id="Animation_gwceb"]
+resource_name = "Death_animation_in"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3sk1a"]
+resource_name = "Death_animation_out"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l53as"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayModeObject/CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l53as"]
+_data = {
+&"Death_animation_in": SubResource("Animation_gwceb"),
+&"Death_animation_out": SubResource("Animation_3sk1a"),
+&"RESET": SubResource("Animation_l53as")
+}
+
+[node name="Level_16" type="Node2D"]
+script = ExtResource("1_hyfp4")
+level_number = 16
+cam_max_zoom = Vector2(0.7, 0.7)
+
+[node name="PlayModeObject" type="Node" parent="."]
+
+[node name="NextLevelSprite" type="Sprite2D" parent="PlayModeObject"]
+position = Vector2(-217, 72)
+texture = ExtResource("2_3n2sn")
+
+[node name="next_level" parent="PlayModeObject" instance=ExtResource("3_om4q0")]
+position = Vector2(287, -246)
+rotation = 3.14159
+
+[node name="Darkness" parent="PlayModeObject" node_paths=PackedStringArray("lvl") instance=ExtResource("4_a50we")]
+position = Vector2(2, -289)
+lvl = NodePath("../..")
+
+[node name="Tiles" parent="PlayModeObject" instance=ExtResource("5_inh47")]
+position = Vector2(108, -72)
+tile_map_data = PackedByteArray("AADp/woAAAAAAAoAAADq/woAAAAEAAoAAADr/woAAAAEAAoAAADs/woAAAAEAAoAAADt/woAAAAEAAoAAADu/woAAAAEAAoAAADv/woAAAAGAAoAAADy/wMAAAAEAAoAAADz/wMAAAAEAAoAAAD0/wMAAAAEAAoAAAD1/wMAAAAEAAoAAAD2/wMAAAAEAAoAAAD3/wMAAAAEAAoAAAD4/wMAAAAEAAoAAAD5/wMAAAAEAAoAAAD6/wMAAAAEAAoAAAD7/wMAAAAEAAoAAAD8/wMAAAAEAAoAAAD9/wMAAAAEAAoAAAD+/wMAAAAEAAoAAAD//wMAAAAEAAoAAAAAAAMAAAAEAAoAAAABAAMAAAAEAAoAAAACAAMAAAAEAAoAAAADAAMAAAAEAAoAAAAEAAMAAAAEAAoAAAAHAAoAAAAEAAoAAAAIAAoAAAAEAAoAAAAJAAoAAAAEAAoAAAAKAAoAAAAEAAoAAAALAAoAAAAEAAoAAAAMAAoAAAAEAAoAAAAGAAoAAAAAAAoAAAANAAoAAAAGAAoAAAANAAkAAAAGAAQAAAANAAgAAAAGAAQAAAANAAcAAAAGAAQAAAANAAYAAAAGAAQAAAANAAUAAAAGAAQAAAANAAQAAAAGAAQAAAANAAMAAAAGAAQAAAANAAIAAAAGAAQAAAANAAEAAAAGAAQAAAANAAAAAAAGAAQAAAANAP//AAAGAAQAAAANAP7/AAAGAAQAAAANAP3/AAAGAAQAAAANAPz/AAAGAAQAAAANAPv/AAAGAAQAAAANAPr/AAAGAAQAAAAMAAYAAAAEAAAAAAALAAYAAAACAAAAAAAKAAYAAAAEAAAAAADq/wMAAAAEAAoAAADr/wMAAAAEAAoAAADs/wMAAAAEAAoAAADt/wMAAAAEAAoAAADu/wMAAAAEAAoAAADv/wMAAAAEAAoAAADw/wMAAAAEAAoAAADx/wMAAAAEAAoAAAAEAPr/AAAEAAoAAAADAPr/AAAEAAoAAAACAPr/AAAEAAoAAAABAPr/AAAEAAoAAAAAAPr/AAAEAAoAAAD///r/AAAEAAoAAAD+//r/AAAEAAoAAAD9//r/AAAEAAoAAAD8//r/AAAEAAoAAAD7//r/AAAEAAoAAAD6//r/AAAEAAoAAAD5//r/AAAEAAoAAAD4//r/AAAEAAoAAAD3//r/AAAEAAoAAAD2//r/AAAEAAoAAAD1//r/AAAEAAoAAAD0//r/AAAEAAoAAADz//r/AAAEAAoAAADy//r/AAAEAAoAAADx//r/AAAEAAoAAADw//r/AAAEAAoAAADv//r/AAAAAAoAAAAFAPr/AAAEAAoAAAAGAPr/AAAEAAoAAAAHAPr/AAAEAAoAAAAIAPr/AAAEAAoAAAAJAPr/AAAEAAoAAAAKAPr/AAAEAAoAAAALAPr/AAAEAAoAAAAMAPr/AAAEAAoAAAANAPn/AAAGAAQAAAANAPj/AAAGAAQAAAANAPf/AAAGAAQAAAANAPb/AAAGAAQAAAANAPX/AAAGAAQAAAANAPT/AAAGAAQAAAANAPP/AAAGAAAAAAAMAPP/AAAEAAAAAAALAPP/AAAEAAAAAAAKAPP/AAAEAAAAAAAJAPP/AAAEAAAAAAAIAPP/AAAEAAAAAAAHAPP/AAAEAAAAAAAGAPP/AAAEAAAAAAAFAPP/AAAEAAAAAAAEAPP/AAAEAAAAAAADAPP/AAAEAAAAAAACAPP/AAAEAAAAAAABAPP/AAAEAAAAAAAAAPP/AAAEAAAAAAD///P/AAAEAAAAAAD+//P/AAAEAAAAAAD9//P/AAAEAAAAAAD8//P/AAAEAAAAAAD7//P/AAAEAAAAAAD6//P/AAAEAAAAAAD5//P/AAAEAAAAAAD4//P/AAAEAAAAAAD3//P/AAAEAAAAAAD2//P/AAAEAAAAAAD1//P/AAAEAAAAAAD0//P/AAAEAAAAAADz//P/AAAEAAAAAADy//P/AAAEAAAAAADx//P/AAAEAAAAAADw//P/AAAEAAAAAADv//P/AAAEAAAAAADu//P/AAAEAAAAAADt//P/AAAEAAAAAADs//P/AAAEAAAAAADr//P/AAAEAAAAAADq//P/AAAEAAAAAADp//P/AAAEAAAAAADo//P/AAAEAAAAAADn//P/AAAAAAAAAADn//T/AAAAAAgAAADn//X/AAAAAAgAAADn//b/AAAAAAgAAADn//f/AAAAAAgAAADn//j/AAAAAAgAAADn//n/AAAAAAgAAADn//r/AAAAAAgAAADn//v/AAAAAAgAAADn//z/AAAAAAgAAADn//3/AAAAAAgAAADn//7/AAAAAAgAAADn////AAAAAAgAAADn/wAAAAAAAAgAAADn/wEAAAAAAAgAAADn/wIAAAAAAAgAAADn/wMAAAAAAAgAAADp/wMAAAAEAAoAAADo/wMAAAAEAAoAAADo////AAAEAAYAAADp////AAAEAAYAAADq////AAACAAYAAAAFAAMAAAAEAAoAAAAGAAMAAAAGAAoAAADz//n/AAAKAAYAAADz//j/AAAKAAYAAAAAAPn/AAAKAAgAAAAAAPj/AAAKAAoAAAAJAPn/AAAKAAgAAAD5//n/AAAKAAgAAAD7/wQAAAAKAAgAAAD7/wUAAAAKAAYAAADv/wQAAAAKAAgAAADv/wUAAAAKAAoAAAD0/wQAAAAKAAYAAAAIAPv/AAAKAAYAAAAIAPz/AAAKAAoAAAA=")
+
+[node name="MatchFire" parent="PlayModeObject" instance=ExtResource("12_inh47")]
+position = Vector2(-188, 72)
+action = SubResource("Resource_t3bll")
+stat = ExtResource("14_frcq8")
+metadata/_edit_lock_ = true
+
+[node name="MatchFire5" parent="PlayModeObject" instance=ExtResource("12_inh47")]
+position = Vector2(-235, -40)
+action = SubResource("Resource_t3bll")
+stat = ExtResource("14_frcq8")
+metadata/_edit_lock_ = true
+
+[node name="MatchFire2" parent="PlayModeObject" instance=ExtResource("12_inh47")]
+position = Vector2(266, 72)
+action = SubResource("Resource_igkw2")
+stat = ExtResource("14_frcq8")
+metadata/_edit_lock_ = true
+
+[node name="MatchFire4" parent="PlayModeObject" instance=ExtResource("12_inh47")]
+position = Vector2(-77, -40)
+action = SubResource("Resource_8o4r1")
+stat = SubResource("Resource_042fp")
+metadata/_edit_lock_ = true
+
+[node name="MatchFire3" parent="PlayModeObject" instance=ExtResource("12_inh47")]
+position = Vector2(105, -40)
+action = SubResource("Resource_v5ho3")
+stat = SubResource("Resource_jjyk6")
+metadata/_edit_lock_ = true
+
+[node name="Green_MatchFire2" parent="PlayModeObject" instance=ExtResource("12_inh47")]
+position = Vector2(54, -248)
+rotation = -3.14159
+action = ExtResource("10_4qk2l")
+stat = ExtResource("11_dg6qb")
+metadata/_edit_lock_ = true
+
+[node name="Green_MatchFire3" parent="PlayModeObject" instance=ExtResource("12_inh47")]
+position = Vector2(231, -248)
+rotation = -3.14159
+action = ExtResource("10_4qk2l")
+stat = ExtResource("11_dg6qb")
+metadata/_edit_lock_ = true
+
+[node name="Green_MatchFire" parent="PlayModeObject" instance=ExtResource("12_inh47")]
+position = Vector2(-146, -248)
+rotation = -3.14159
+action = ExtResource("10_4qk2l")
+stat = ExtResource("11_dg6qb")
+metadata/_edit_lock_ = true
+
+[node name="Shadow" parent="PlayModeObject" instance=ExtResource("6_6uant")]
+position = Vector2(-201, 80)
+
+[node name="Camera2D" type="Camera2D" parent="PlayModeObject"]
+position = Vector2(16, -141)
+
+[node name="Blue_firefly" parent="PlayModeObject" instance=ExtResource("10_igkw2")]
+position = Vector2(692, -115)
+stat = ExtResource("11_pqe4w")
+action = SubResource("Resource_b7bkq")
+
+[node name="Blue_firefly2" parent="PlayModeObject" instance=ExtResource("10_igkw2")]
+position = Vector2(687, -56)
+stat = ExtResource("11_pqe4w")
+action = SubResource("Resource_g10n6")
+
+[node name="Blue_firefly3" parent="PlayModeObject" instance=ExtResource("10_igkw2")]
+position = Vector2(682, 33)
+stat = ExtResource("11_pqe4w")
+action = SubResource("Resource_gfi5s")
+
+[node name="Red_firefly" parent="PlayModeObject" instance=ExtResource("10_igkw2")]
+position = Vector2(690, -163)
+stat = ExtResource("11_g6v13")
+action = SubResource("Resource_2onu1")
+
+[node name="Red_firefly2" parent="PlayModeObject" instance=ExtResource("10_igkw2")]
+position = Vector2(685, -237)
+stat = ExtResource("11_g6v13")
+action = SubResource("Resource_4qk2l")
+
+[node name="Red_firefly3" parent="PlayModeObject" instance=ExtResource("10_igkw2")]
+position = Vector2(687, -323)
+stat = ExtResource("11_g6v13")
+action = SubResource("Resource_dg6qb")
+
+[node name="Enemies" type="Node2D" parent="PlayModeObject"]
+metadata/_edit_lock_ = true
+
+[node name="Enemy4" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-18, 34)
+
+[node name="Enemy8" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-50, -254)
+
+[node name="Enemy60" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-50, -237)
+
+[node name="Enemy61" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(153, -254)
+
+[node name="Enemy62" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(153, -239)
+
+[node name="Enemy63" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(153, -194)
+
+[node name="Enemy5" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-18, 16)
+
+[node name="Enemy6" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(153, 83)
+
+[node name="Enemy7" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(153, 65)
+
+[node name="Enemy9" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(60, 83)
+
+[node name="Enemy10" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-18, -2)
+
+[node name="Enemy11" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(60, 65)
+
+[node name="Enemy13" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(60, 1)
+
+[node name="Enemy" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-94, 79)
+
+[node name="Enemy14" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-94, 96)
+
+[node name="Enemy15" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(60, 101)
+
+[node name="Enemy16" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(153, 101)
+
+[node name="Enemy2" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-94, 61)
+
+[node name="Enemy27" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(78, -34)
+
+[node name="Enemy28" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(58, -52)
+
+[node name="Enemy29" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(75, -72)
+
+[node name="Enemy30" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(57, -90)
+
+[node name="Enemy31" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(76, -106)
+
+[node name="Enemy32" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(57, -123)
+
+[node name="Enemy33" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(76, -141)
+
+[node name="Enemy34" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(35, -142)
+
+[node name="Enemy35" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(36, -108)
+
+[node name="Enemy36" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(36, -71)
+
+[node name="Enemy37" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-10, -34)
+
+[node name="Enemy38" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-30, -52)
+
+[node name="Enemy39" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-13, -72)
+
+[node name="Enemy40" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-31, -90)
+
+[node name="Enemy41" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-12, -106)
+
+[node name="Enemy42" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-31, -123)
+
+[node name="Enemy43" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-12, -141)
+
+[node name="Enemy44" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-53, -142)
+
+[node name="Enemy45" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-52, -108)
+
+[node name="Enemy46" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-52, -71)
+
+[node name="Enemy47" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-95, -34)
+
+[node name="Enemy48" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-115, -52)
+
+[node name="Enemy49" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-98, -72)
+
+[node name="Enemy50" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-116, -90)
+
+[node name="Enemy51" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-97, -106)
+
+[node name="Enemy52" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-116, -123)
+
+[node name="Enemy53" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-97, -141)
+
+[node name="Enemy54" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-138, -142)
+
+[node name="Enemy55" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-137, -108)
+
+[node name="Enemy56" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-137, -71)
+
+[node name="Enemy57" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-135, -35)
+
+[node name="Enemy58" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(-50, -35)
+
+[node name="Enemy59" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(38, -35)
+
+[node name="Enemy12" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(168, -32)
+
+[node name="Enemy17" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(148, -50)
+
+[node name="Enemy18" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(165, -70)
+
+[node name="Enemy19" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(147, -88)
+
+[node name="Enemy20" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(166, -104)
+
+[node name="Enemy21" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(147, -121)
+
+[node name="Enemy22" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(166, -139)
+
+[node name="Enemy23" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(125, -140)
+
+[node name="Enemy24" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(126, -106)
+
+[node name="Enemy25" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(126, -69)
+
+[node name="Enemy26" parent="PlayModeObject/Enemies" instance=ExtResource("15_6uant")]
+position = Vector2(128, -33)
+
+[node name="Death_zone" type="Area2D" parent="PlayModeObject"]
+position = Vector2(-174, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayModeObject/Death_zone"]
+position = Vector2(209, 143)
+shape = SubResource("RectangleShape2D_g6v13")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayModeObject/Death_zone"]
+position = Vector2(214, -428)
+shape = SubResource("RectangleShape2D_g6v13")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayModeObject"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_l53as")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PlayModeObject"]
+
+[node name="ColorRect" type="ColorRect" parent="PlayModeObject/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="PlayModeObject"]
+position = Vector2(13, -362)
+amount = 2
+lifetime = 1.3
+emission_shape = 3
+emission_rect_extents = Vector2(300, 1)
+gravity = Vector2(0, 400)
+
+[node name="EditModeObject" type="Node" parent="."]
+script = ExtResource("7_frcq8")
+
+[node name="Decor_bottom" type="CanvasLayer" parent="EditModeObject"]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="Little_brothers" parent="EditModeObject/Decor_bottom" instance=ExtResource("20_n0jk3")]
+position = Vector2(-284, 121)
+
+[node name="Little_brothers2" parent="EditModeObject/Decor_bottom" instance=ExtResource("20_n0jk3")]
+position = Vector2(359, 1)
+
+[node name="Little_brothers3" parent="EditModeObject/Decor_bottom" instance=ExtResource("20_n0jk3")]
+position = Vector2(362, -247)
+
+[node name="Little_brothers4" parent="EditModeObject/Decor_bottom" instance=ExtResource("20_n0jk3")]
+position = Vector2(-325, -79)
+
+[node name="Little_brothers5" parent="EditModeObject/Decor_bottom" instance=ExtResource("20_n0jk3")]
+position = Vector2(-328, -175)
+
+[node name="Little_brothers6" parent="EditModeObject/Decor_bottom" instance=ExtResource("20_n0jk3")]
+position = Vector2(365, -185)
+
+[node name="Little_brothers7" parent="EditModeObject/Decor_bottom" instance=ExtResource("20_n0jk3")]
+position = Vector2(246, 152)
+
+[node name="Little_brothers8" parent="EditModeObject/Decor_bottom" instance=ExtResource("20_n0jk3")]
+position = Vector2(-190, 214)
+
+[node name="Little_brothers9" parent="EditModeObject/Decor_bottom" instance=ExtResource("20_n0jk3")]
+position = Vector2(-395, -127)
+
+[node name="Little_brothers10" parent="EditModeObject/Decor_bottom" instance=ExtResource("20_n0jk3")]
+position = Vector2(-359, -284)
+
+[node name="Little_brothers11" parent="EditModeObject/Decor_bottom" instance=ExtResource("20_n0jk3")]
+position = Vector2(-148, -330)
+
+[node name="DarknessThumbTop" type="Sprite2D" parent="EditModeObject/Decor_bottom"]
+position = Vector2(449, 66)
+texture = ExtResource("8_t3bll")
+
+[node name="DarknessBottom" type="Sprite2D" parent="EditModeObject/Decor_bottom"]
+position = Vector2(-424, 117)
+texture = ExtResource("9_l2vy3")
+
+[node name="Blue_Icon" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("17_g10n6")]
+position = Vector2(-341, 86)
+attach_object = NodePath("../../PlayModeObject/Blue_firefly")
+icon = ExtResource("20_g10n6")
+
+[node name="Blue_Icon2" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("17_g10n6")]
+position = Vector2(-370, 88)
+attach_object = NodePath("../../PlayModeObject/Blue_firefly2")
+icon = ExtResource("20_g10n6")
+
+[node name="Blue_Icon3" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("17_g10n6")]
+position = Vector2(-397, 85)
+attach_object = NodePath("../../PlayModeObject/Blue_firefly3")
+icon = ExtResource("20_g10n6")
+
+[node name="Red_Icon" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("17_g10n6")]
+position = Vector2(-362, 63)
+attach_object = NodePath("../../PlayModeObject/Red_firefly")
+icon = ExtResource("18_b7bkq")
+
+[node name="Red_Icon2" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("17_g10n6")]
+position = Vector2(-389, 62)
+attach_object = NodePath("../../PlayModeObject/Red_firefly2")
+icon = ExtResource("18_b7bkq")
+
+[node name="Red_Icon3" parent="EditModeObject" node_paths=PackedStringArray("attach_object") instance=ExtResource("17_g10n6")]
+position = Vector2(-338, 63)
+attach_object = NodePath("../../PlayModeObject/Red_firefly3")
+icon = ExtResource("18_b7bkq")
+
+[node name="Decor_top" type="CanvasLayer" parent="EditModeObject"]
+follow_viewport_enabled = true
+
+[node name="DarknessTop" type="Sprite2D" parent="EditModeObject/Decor_top"]
+position = Vector2(482, 66)
+texture = ExtResource("10_7oc5t")
+
+[node name="DarknessThumbBottom" type="Sprite2D" parent="EditModeObject/Decor_top"]
+position = Vector2(-388, 112)
+texture = ExtResource("11_igkw2")
+
+[node name="Inventory" type="Area2D" parent="EditModeObject"]
+position = Vector2(-12, 112)
+collision_layer = 0
+collision_mask = 4
+input_pickable = false
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EditModeObject/Inventory"]
+polygon = PackedVector2Array(-328, -511, -563, -512, -562, 189, 604, 206, 607, -509, 484, -508, 490, 22, -328, 24)
+
+[connection signal="body_entered" from="PlayModeObject/next_level" to="." method="_on_next_level_body_entered"]
+[connection signal="body_entered" from="PlayModeObject/Death_zone" to="." method="_on_death_zone_body_entered"]
+[connection signal="animation_finished" from="PlayModeObject/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

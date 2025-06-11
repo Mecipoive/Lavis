@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="multiple_firefly" load_steps=5 format=3 uid="uid://cur5ptlx1oqwc"]
+
+[ext_resource type="Script" uid="uid://d3lsbb1fte0e5" path="res://scripts/firefly/action_firefly.gd" id="1_c3h0c"]
+[ext_resource type="Resource" uid="uid://sh22cswtmivv" path="res://ressources/firefly/action/inverse_firefly.tres" id="2_bdlyj"]
+[ext_resource type="Script" path="res://scripts/firefly/multiple_firefly.gd" id="2_jias2"]
+[ext_resource type="Resource" uid="uid://cdqxl55qq3qyr" path="res://ressources/firefly/action/visibility_firefly.tres" id="3_bsoy3"]
+
+[resource]
+script = ExtResource("2_jias2")
+list_action = Array[ExtResource("1_c3h0c")]([ExtResource("2_bdlyj"), ExtResource("3_bsoy3")])
+metadata/_custom_type_script = "uid://17uwutfs1yn8"

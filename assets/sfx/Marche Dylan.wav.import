@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dw7p1e3k3r4a7"
+path="res://.godot/imported/Marche Dylan.wav-6952bf3fe01f7a8d105567bd2ee89b7f.sample"
+
+[deps]
+
+source_file="res://assets/sfx/Marche Dylan.wav"
+dest_files=["res://.godot/imported/Marche Dylan.wav-6952bf3fe01f7a8d105567bd2ee89b7f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

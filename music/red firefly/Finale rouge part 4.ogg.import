@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dv3bm1gsarnxo"
+path="res://.godot/imported/Finale rouge part 4.ogg-85349c6ea891eb647575b9a8a7080913.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/red firefly/Finale rouge part 4.ogg"
+dest_files=["res://.godot/imported/Finale rouge part 4.ogg-85349c6ea891eb647575b9a8a7080913.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=130.0
+beat_count=0
+bar_beats=4

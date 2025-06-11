@@ -1,0 +1,68 @@
+[gd_scene load_steps=17 format=3 uid="uid://5tl0fdbfsqvk"]
+
+[ext_resource type="Script" uid="uid://bitv36bcvpoqi" path="res://scripts/music_manager.gd" id="1_3v8bh"]
+[ext_resource type="AudioStream" uid="uid://vjn5g8ch5m02" path="res://music/intro/Help him part 1.ogg" id="2_23aj5"]
+[ext_resource type="AudioStream" uid="uid://cg6ikwwf0sasd" path="res://music/green firefly/Need to think debut.ogg" id="2_nuxwc"]
+[ext_resource type="AudioStream" uid="uid://ccgp2b1xqd8e5" path="res://music/green firefly/Need to think trans.ogg" id="3_b7oxt"]
+[ext_resource type="AudioStream" uid="uid://ciiwl2jel1m1u" path="res://music/intro/Help him part 2.ogg" id="3_iw17y"]
+[ext_resource type="AudioStream" uid="uid://yf7pcmi3jfxy" path="res://music/green firefly/Need to think drop.ogg" id="4_23aj5"]
+[ext_resource type="AudioStream" uid="uid://b2j3qxfa17np6" path="res://music/red firefly/Finale rouge part 3.ogg" id="4_qqv10"]
+[ext_resource type="AudioStream" uid="uid://dd38seeqyf7oq" path="res://music/blue firefly/blue part 1.ogg" id="4_tk4j5"]
+[ext_resource type="AudioStream" uid="uid://dvjj2glaie3xq" path="res://music/blue firefly/blue part 2.ogg" id="5_i7e1c"]
+[ext_resource type="AudioStream" uid="uid://dv3bm1gsarnxo" path="res://music/red firefly/Finale rouge part 4.ogg" id="5_rkpp7"]
+[ext_resource type="AudioStream" uid="uid://dd8jnvbivrkaa" path="res://music/blue firefly/blue part 3.ogg" id="6_lsrpp"]
+[ext_resource type="AudioStream" uid="uid://dxgyu68vkbkhn" path="res://music/red firefly/Finale rouge part 5.ogg" id="6_oy5ru"]
+[ext_resource type="AudioStream" uid="uid://cb4w5b6dvr2dr" path="res://music/Papa monologue.ogg" id="7_otii8"]
+[ext_resource type="AudioStream" uid="uid://b73cuke0hx402" path="res://music/red firefly/Finale rouge part 1.ogg" id="10_i7e1c"]
+[ext_resource type="AudioStream" uid="uid://b7knm71chl6xl" path="res://music/red firefly/Finale rouge part 2.ogg" id="11_lsrpp"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_tk4j5"]
+clip_count = 14
+clip_0/name = &"Help Him Part 1"
+clip_0/stream = ExtResource("2_23aj5")
+clip_0/auto_advance = 0
+clip_1/name = &"Help Him Part 2"
+clip_1/stream = ExtResource("3_iw17y")
+clip_1/auto_advance = 0
+clip_2/name = &"Blue Part 1"
+clip_2/stream = ExtResource("4_tk4j5")
+clip_2/auto_advance = 0
+clip_3/name = &"Blue Part 2"
+clip_3/stream = ExtResource("5_i7e1c")
+clip_3/auto_advance = 0
+clip_4/name = &"Blue Part 3"
+clip_4/stream = ExtResource("6_lsrpp")
+clip_4/auto_advance = 0
+clip_5/name = &"Need To Think Start"
+clip_5/stream = ExtResource("2_nuxwc")
+clip_5/auto_advance = 0
+clip_6/name = &"Need To Think Mid"
+clip_6/stream = ExtResource("3_b7oxt")
+clip_6/auto_advance = 0
+clip_7/name = &"Need To Think End"
+clip_7/stream = ExtResource("4_23aj5")
+clip_7/auto_advance = 0
+clip_8/name = &"Finale Red Part 1"
+clip_8/stream = ExtResource("10_i7e1c")
+clip_8/auto_advance = 0
+clip_9/name = &"Finale Red Part 2"
+clip_9/stream = ExtResource("11_lsrpp")
+clip_9/auto_advance = 0
+clip_10/name = &"Finale Red Part 3"
+clip_10/stream = ExtResource("4_qqv10")
+clip_10/auto_advance = 0
+clip_11/name = &"Finale Red Part 4"
+clip_11/stream = ExtResource("5_rkpp7")
+clip_11/auto_advance = 0
+clip_12/name = &"Finale Red Part 5"
+clip_12/stream = ExtResource("6_oy5ru")
+clip_12/auto_advance = 0
+clip_13/name = &"LSD"
+clip_13/stream = ExtResource("7_otii8")
+clip_13/auto_advance = 0
+
+[node name="MusicManager" type="Node"]
+script = ExtResource("1_3v8bh")
+
+[node name="All" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamInteractive_tk4j5")

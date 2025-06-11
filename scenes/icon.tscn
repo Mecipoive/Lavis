@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://rogmarxracvu"]
+
+[ext_resource type="Script" uid="uid://r17ierobiyro" path="res://scripts/icon.gd" id="1_h6rt1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6rt1"]
+
+[sub_resource type="Gradient" id="Gradient_h6rt1"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0.429675, 0.452381, 0.476043)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ojcb0"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_h6rt1")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Icon" type="CharacterBody2D" groups=["Pickable"]]
+collision_layer = 4
+collision_mask = 0
+input_pickable = true
+script = ExtResource("1_h6rt1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_h6rt1")
+
+[node name="Circle" type="TextureRect" parent="."]
+visible = false
+offset_right = 64.0
+offset_bottom = 64.0
+texture = SubResource("GradientTexture2D_ojcb0")
+expand_mode = 1
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

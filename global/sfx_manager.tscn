@@ -1,0 +1,63 @@
+[gd_scene load_steps=13 format=3 uid="uid://6kehcuju8cfa"]
+
+[ext_resource type="Script" path="res://scripts/sfx_manager.gd" id="1_xuqmn"]
+[ext_resource type="Script" uid="uid://cylif0mdtnq5c" path="res://scripts/SoundEffectSettings.gd" id="2_1lb6b"]
+[ext_resource type="AudioStream" uid="uid://xh3sh0ijc001" path="res://assets/sfx/Dash Dylan.wav" id="3_5ksnh"]
+[ext_resource type="AudioStream" uid="uid://dgi28uo8cm221" path="res://assets/sfx/Atterissage Dylan.wav" id="4_dxwae"]
+[ext_resource type="AudioStream" uid="uid://uurdw8aq5gur" path="res://assets/sfx/Death Shadow.wav" id="5_dxwae"]
+[ext_resource type="AudioStream" uid="uid://dw7p1e3k3r4a7" path="res://assets/sfx/Marche Dylan.wav" id="6_pguy8"]
+[ext_resource type="AudioStream" uid="uid://c1vjca7wm5r6m" path="res://assets/sfx/LUCIOLE ROUGE.wav" id="7_vad0t"]
+
+[sub_resource type="Resource" id="Resource_brmga"]
+script = ExtResource("2_1lb6b")
+limit = 5
+type = 0
+sound_effect = ExtResource("3_5ksnh")
+volume = 1
+pitch_scale = 1.0
+pitch_randomness = 1.0
+metadata/_custom_type_script = "uid://cylif0mdtnq5c"
+
+[sub_resource type="Resource" id="Resource_dxwae"]
+script = ExtResource("2_1lb6b")
+limit = 2
+type = 1
+sound_effect = ExtResource("4_dxwae")
+volume = 1
+pitch_scale = 1.0
+pitch_randomness = 0.5
+metadata/_custom_type_script = "uid://cylif0mdtnq5c"
+
+[sub_resource type="Resource" id="Resource_5feyo"]
+script = ExtResource("2_1lb6b")
+limit = 5
+type = 2
+sound_effect = ExtResource("5_dxwae")
+volume = 7
+pitch_scale = 1.0
+pitch_randomness = 0.4
+metadata/_custom_type_script = "uid://cylif0mdtnq5c"
+
+[sub_resource type="Resource" id="Resource_ia216"]
+script = ExtResource("2_1lb6b")
+limit = 1
+type = 3
+sound_effect = ExtResource("6_pguy8")
+volume = -10
+pitch_scale = 1.0
+pitch_randomness = 1.0
+metadata/_custom_type_script = "uid://cylif0mdtnq5c"
+
+[sub_resource type="Resource" id="Resource_ieui2"]
+script = ExtResource("2_1lb6b")
+limit = 2
+type = 4
+sound_effect = ExtResource("7_vad0t")
+volume = 0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://cylif0mdtnq5c"
+
+[node name="SFX_manager" type="Node2D"]
+script = ExtResource("1_xuqmn")
+sound_effects_settings = Array[ExtResource("2_1lb6b")]([SubResource("Resource_brmga"), SubResource("Resource_dxwae"), SubResource("Resource_5feyo"), SubResource("Resource_ia216"), SubResource("Resource_ieui2")])

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="visiblity_firefly" load_steps=2 format=3 uid="uid://cdqxl55qq3qyr"]
+
+[ext_resource type="Script" uid="uid://b3xufg6j8qtex" path="res://scripts/firefly/visibility_firefly.gd" id="1_n0v8g"]
+
+[resource]
+script = ExtResource("1_n0v8g")
+metadata/_custom_type_script = "uid://b3xufg6j8qtex"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dvjj2glaie3xq"
+path="res://.godot/imported/blue part 2.ogg-d4676098475e4595261d8a8d711c93d5.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/blue firefly/blue part 2.ogg"
+dest_files=["res://.godot/imported/blue part 2.ogg-d4676098475e4595261d8a8d711c93d5.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=126.0
+beat_count=0
+bar_beats=4

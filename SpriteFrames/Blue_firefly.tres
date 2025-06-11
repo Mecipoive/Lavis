@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://u1che5dq75in"]
+
+[ext_resource type="Texture2D" uid="uid://dg6cmanm47mwh" path="res://assets/sprites/Fire_fly/Blue_fire_fly.png" id="1_ralod"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jb25l"]
+atlas = ExtResource("1_ralod")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx5ke"]
+atlas = ExtResource("1_ralod")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4hy3"]
+atlas = ExtResource("1_ralod")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjnug"]
+atlas = ExtResource("1_ralod")
+region = Rect2(48, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jb25l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx5ke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4hy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjnug")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

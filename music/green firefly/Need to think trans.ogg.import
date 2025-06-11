@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ccgp2b1xqd8e5"
+path="res://.godot/imported/Need to think trans.ogg-4fd898e93730b5c078918cbfcebbce4d.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/green firefly/Need to think trans.ogg"
+dest_files=["res://.godot/imported/Need to think trans.ogg-4fd898e93730b5c078918cbfcebbce4d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=118.0
+beat_count=0
+bar_beats=4

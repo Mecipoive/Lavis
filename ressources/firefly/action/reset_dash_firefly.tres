@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="reset_dash_firefly" load_steps=2 format=3 uid="uid://cs7xlgb5tokc1"]
+
+[ext_resource type="Script" uid="uid://cvbyfdjrm3e6r" path="res://scripts/firefly/reset_dash_firefly.gd" id="1_gcneu"]
+
+[resource]
+script = ExtResource("1_gcneu")
+metadata/_custom_type_script = "uid://cjhlpnq3v2mr0"

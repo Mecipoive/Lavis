@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="stat_firefly" load_steps=2 format=3 uid="uid://db61hum1raluq"]
+
+[ext_resource type="Script" uid="uid://civ5qv0krccwf" path="res://scripts/firefly/stat_firefly.gd" id="1_1mrna"]
+
+[resource]
+script = ExtResource("1_1mrna")
+color = Color(0.27451, 0.588235, 0.223529, 1)
+radius = 300.0
+metadata/_custom_type_script = "uid://civ5qv0krccwf"

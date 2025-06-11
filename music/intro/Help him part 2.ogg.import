@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ciiwl2jel1m1u"
+path="res://.godot/imported/Help him part 2.ogg-422b4c5aa7c65046aa9fc17be9523d7f.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/intro/Help him part 2.ogg"
+dest_files=["res://.godot/imported/Help him part 2.ogg-422b4c5aa7c65046aa9fc17be9523d7f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=126.0
+beat_count=0
+bar_beats=4

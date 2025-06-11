@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://xh3sh0ijc001"
+path="res://.godot/imported/Dash Dylan.wav-c98512e75bb9a226469bde0bb72e99dd.sample"
+
+[deps]
+
+source_file="res://assets/sfx/Dash Dylan.wav"
+dest_files=["res://.godot/imported/Dash Dylan.wav-c98512e75bb9a226469bde0bb72e99dd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

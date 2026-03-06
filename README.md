@@ -2,7 +2,7 @@
 
 ## Author
 - Dylan GIRAULT (Koissy)
-- Mecipsa
+- Mecipsa HESNI
 - Viknesh
 
 ## Play to the game
